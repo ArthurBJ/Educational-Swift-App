@@ -15,15 +15,15 @@ final class OnboardingPartViewController: UIViewController {
         let label = UILabel()
         label.font = .systemFont(ofSize: 23, weight: .bold)
         label.textColor = .white
-        label.text = "Что лучше всего вас описывает"
+        label.text = "Вопрос"
         label.numberOfLines = 0
         return label
     }()
     
-    private lazy var answerButton = EduOnboardingButton(title: "Я студент")
-    private lazy var answer2Button = EduOnboardingButton(title: "Я работаю")
-    private lazy var answer3Button = EduOnboardingButton(title: "Я предприниматель")
-    private lazy var answer4Button = EduOnboardingButton(title: "Другое")
+    private lazy var answerButton = EduOnboardingButton(title: "Ответ 1")
+    private lazy var answer2Button = EduOnboardingButton(title: "Ответ 2")
+    private lazy var answer3Button = EduOnboardingButton(title: "Ответ 3")
+    private lazy var answer4Button = EduOnboardingButton(title: "Ответ 4")
     
     
     // MARK: - Life Cycle
@@ -34,7 +34,14 @@ final class OnboardingPartViewController: UIViewController {
         setConstraints()
     }
     
-    // MARK: - Private methods
+    // MARK: - methods
+    func configure(question: String, answer1: String, answer2: String, answer3: String, answer4: String) {
+        questionLabel.text = question
+        answerButton.setTitle(answer1, for: .normal)
+        answer2Button.setTitle(answer2, for: .normal)
+        answer3Button.setTitle(answer3, for: .normal)
+        answer4Button.setTitle(answer4, for: .normal)
+    }
     
 }
 
