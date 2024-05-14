@@ -12,6 +12,7 @@ final class AppCoordinator: Coordinator {
     var navigation: UINavigationController
     private let appFactory: AppFactory
     private var onboardingCoordinator: Coordinator?
+    private var mainTabBarCoordinator: Coordinator?
     
     init(navigation: UINavigationController, appFactory: AppFactory, window: UIWindow?) {
         self.navigation = navigation
@@ -39,7 +40,8 @@ final class AppCoordinator: Coordinator {
     }
     
     private func startMainTabBarCoordinator() {
-        print("Main Tab Bar")
+        mainTabBarCoordinator = appFactory.makeMainTabBarCoordinator(navigation: navigation)
+        mainTabBarCoordinator?.start()
     }
     
     private func configWindow(window: UIWindow?) {
@@ -51,7 +53,6 @@ final class AppCoordinator: Coordinator {
 
 extension AppCoordinator: OnboardingCoordinatorDelegate {
     func didFinishOnboarding() {
-        print("something here")
         navigation.viewControllers = []
         onboardingCoordinator = nil
         startSomeCoordinator()

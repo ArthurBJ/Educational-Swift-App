@@ -53,7 +53,6 @@ final class OnboardingViewController: UIViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(pages.count)
         
         configView()
         setupStartOnboardingPartDelegate()
@@ -107,7 +106,6 @@ extension OnboardingViewController: OnboardingPartViewControllerDelegate {
             (pages[currentPageIndex] as? OnboardingPartViewController)?.delegate = self
             pageController.setViewControllers([pages[3]], direction: .forward, animated: true)
         case 3:
-            print("Last page")
             viewModel.onboardingFinish()
             coordinator.didTapFinishOnboardingButton()
         default:
