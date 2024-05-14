@@ -26,12 +26,7 @@ final class AppCoordinator: Coordinator {
     }
     
     private func startSomeCoordinator() {
-        // TODO: check in UserDefaults onbaording pass
-        if UserDefaultsManager.shared.onboardingPassed {
-            startMainTabBarCoordinator()
-        } else {
-            startOnboardingCoordinator()
-        }
+        UserDefaultsManager.shared.onboardingPassed ? startMainTabBarCoordinator() : startOnboardingCoordinator()
     }
     
     private func startOnboardingCoordinator() {

@@ -15,6 +15,11 @@
 		C9336FE22BF415F2008DEE76 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9336FE12BF415F2008DEE76 /* MainTabBarController.swift */; };
 		C9336FE42BF41630008DEE76 /* MainTabBarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9336FE32BF41630008DEE76 /* MainTabBarFactory.swift */; };
 		C9336FE62BF4166C008DEE76 /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9336FE52BF4166C008DEE76 /* MainTabBarCoordinator.swift */; };
+		C9336FEB2BF41AC8008DEE76 /* ProfileViewNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9336FEA2BF41AC8008DEE76 /* ProfileViewNavigation.swift */; };
+		C9336FED2BF41CCD008DEE76 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9336FEC2BF41CCD008DEE76 /* ProfileViewController.swift */; };
+		C9336FEF2BF41F99008DEE76 /* ProfileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9336FEE2BF41F99008DEE76 /* ProfileFactory.swift */; };
+		C9336FF12BF41FFE008DEE76 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9336FF02BF41FFE008DEE76 /* ProfileCoordinator.swift */; };
+		C9336FF32BF42387008DEE76 /* ItemTabBarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9336FF22BF42387008DEE76 /* ItemTabBarFactory.swift */; };
 		C9DBD7F42BF259AD008094B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F32BF259AD008094B3 /* AppDelegate.swift */; };
 		C9DBD7F62BF259AD008094B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F52BF259AD008094B3 /* SceneDelegate.swift */; };
 		C9DBD7F82BF259AD008094B3 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F72BF259AD008094B3 /* OnboardingViewController.swift */; };
@@ -40,6 +45,11 @@
 		C9336FE12BF415F2008DEE76 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		C9336FE32BF41630008DEE76 /* MainTabBarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarFactory.swift; sourceTree = "<group>"; };
 		C9336FE52BF4166C008DEE76 /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
+		C9336FEA2BF41AC8008DEE76 /* ProfileViewNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewNavigation.swift; sourceTree = "<group>"; };
+		C9336FEC2BF41CCD008DEE76 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C9336FEE2BF41F99008DEE76 /* ProfileFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFactory.swift; sourceTree = "<group>"; };
+		C9336FF02BF41FFE008DEE76 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		C9336FF22BF42387008DEE76 /* ItemTabBarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTabBarFactory.swift; sourceTree = "<group>"; };
 		C9DBD7F02BF259AD008094B3 /* EducationalSwiftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EducationalSwiftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9DBD7F32BF259AD008094B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9DBD7F52BF259AD008094B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +110,31 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		C9336FE72BF41A6D008DEE76 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C9336FE92BF41AB4008DEE76 /* ViewModel */,
+				C9336FE82BF41A75008DEE76 /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		C9336FE82BF41A75008DEE76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C9336FEC2BF41CCD008DEE76 /* ProfileViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C9336FE92BF41AB4008DEE76 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C9336FEA2BF41AC8008DEE76 /* ProfileViewNavigation.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		C9DBD7E72BF259AD008094B3 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +187,7 @@
 		C9DBD80F2BF25A14008094B3 /* ScreenModules */ = {
 			isa = PBXGroup;
 			children = (
+				C9336FE72BF41A6D008DEE76 /* Profile */,
 				C9336FDF2BF415E0008DEE76 /* MainTabBar */,
 				C9DBD81F2BF25B10008094B3 /* Onboarding */,
 				C9DBD81E2BF25AFD008094B3 /* LaunchScreen */,
@@ -247,6 +283,8 @@
 				C9DBD8262BF27566008094B3 /* AppFactory.swift */,
 				C9DBD82A2BF27640008094B3 /* OnboardingFactory.swift */,
 				C9336FE32BF41630008DEE76 /* MainTabBarFactory.swift */,
+				C9336FF22BF42387008DEE76 /* ItemTabBarFactory.swift */,
+				C9336FEE2BF41F99008DEE76 /* ProfileFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -293,6 +331,7 @@
 			children = (
 				C9DBD8282BF27613008094B3 /* OnboardingCoordinator.swift */,
 				C9336FE52BF4166C008DEE76 /* MainTabBarCoordinator.swift */,
+				C9336FF02BF41FFE008DEE76 /* ProfileCoordinator.swift */,
 			);
 			path = CoordinatorScreens;
 			sourceTree = "<group>";
@@ -437,6 +476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9336FC72BF3AC6B008DEE76 /* OnboardingPartViewController.swift in Sources */,
+				C9336FF12BF41FFE008DEE76 /* ProfileCoordinator.swift in Sources */,
 				C9DBD82B2BF27640008094B3 /* OnboardingFactory.swift in Sources */,
 				C9336FE22BF415F2008DEE76 /* MainTabBarController.swift in Sources */,
 				C9DBD8232BF274EF008094B3 /* AppCoordinator.swift in Sources */,
@@ -445,12 +485,16 @@
 				C9DBD7F42BF259AD008094B3 /* AppDelegate.swift in Sources */,
 				C9DBD8212BF274C4008094B3 /* Coordinator.swift in Sources */,
 				C9DBD7FE2BF259AD008094B3 /* EducationalSwiftApp.xcdatamodeld in Sources */,
+				C9336FED2BF41CCD008DEE76 /* ProfileViewController.swift in Sources */,
 				C9336FE62BF4166C008DEE76 /* MainTabBarCoordinator.swift in Sources */,
+				C9336FEB2BF41AC8008DEE76 /* ProfileViewNavigation.swift in Sources */,
+				C9336FEF2BF41F99008DEE76 /* ProfileFactory.swift in Sources */,
 				C9DBD8292BF27613008094B3 /* OnboardingCoordinator.swift in Sources */,
 				C9336FDE2BF41573008DEE76 /* OnboardingViewModel.swift in Sources */,
 				C9336FE42BF41630008DEE76 /* MainTabBarFactory.swift in Sources */,
 				C9336FDB2BF413EA008DEE76 /* UserDefaultsManager.swift in Sources */,
 				C9336FCB2BF3BD21008DEE76 /* UIColor + Extension.swift in Sources */,
+				C9336FF32BF42387008DEE76 /* ItemTabBarFactory.swift in Sources */,
 				C9DBD8272BF27566008094B3 /* AppFactory.swift in Sources */,
 				C9DBD7F62BF259AD008094B3 /* SceneDelegate.swift in Sources */,
 			);
