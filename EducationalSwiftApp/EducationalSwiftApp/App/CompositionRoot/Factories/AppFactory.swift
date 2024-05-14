@@ -8,23 +8,23 @@
 import UIKit
 
 protocol AppFactory {
-    func makeOnboardingCoordinator(navigation: UINavigationController) -> Coordinator
-    func makeMainTabBarCoordinator(navigation: UINavigationController) -> Coordinator
+    func makeOnboardingCoordinator(navigation: UINavigationController, delegate: OnboardingCoordinatorDelegate) -> Coordinator
+//    func makeMainTabBarCoordinator(navigation: UINavigationController) -> Coordinator
 }
 
 struct AppFactoryImpl: AppFactory {
     
-    func makeOnboardingCoordinator(navigation: UINavigationController) -> Coordinator {
+    func makeOnboardingCoordinator(navigation: UINavigationController, delegate: OnboardingCoordinatorDelegate) -> Coordinator {
         let onboardingFactory = OnboardingFactoryImpl()
-        let onboardingCoordinator = OnboardingCoordinator(navigation: navigation, onboardingFactory: onboardingFactory)
+        let onboardingCoordinator = OnboardingCoordinator(navigation: navigation, onboardingFactory: onboardingFactory, delegate: delegate)
         return onboardingCoordinator
     }
     
-    func makeMainTabBarCoordinator(navigation: UINavigationController) -> Coordinator {
-        let onboardingFactory = OnboardingFactoryImpl()
-        let onboardingCoordinator = OnboardingCoordinator(navigation: navigation, onboardingFactory: onboardingFactory)
-        return onboardingCoordinator
-    }
+//    func makeMainTabBarCoordinator(navigation: UINavigationController) -> Coordinator {
+//        let onboardingFactory = OnboardingFactoryImpl()
+//        let onboardingCoordinator = OnboardingCoordinator(navigation: navigation, onboardingFactory: onboardingFactory, delegate: <#OnboardingCoordinatorDelegate#>)
+//        return onboardingCoordinator
+//    }
     
     
 }

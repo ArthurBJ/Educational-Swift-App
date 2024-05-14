@@ -15,7 +15,7 @@ protocol OnboardingViewControllerCoordinator: AnyObject {
 final class OnboardingViewController: UIViewController {
     
     // MARK: Properties
-//    private var coordinator: OnboardingViewControllerCoordinator
+    private var coordinator: OnboardingViewControllerCoordinator
     private var pages = [UIViewController]()
     private var currentPageIndex: Int = 0
     
@@ -36,9 +36,9 @@ final class OnboardingViewController: UIViewController {
     }()
 
     // MARK: Initializers
-    init(pages: [UIViewController] = [UIViewController]() /*coordinator: OnboardingViewControllerCoordinator*/) {
+    init(pages: [UIViewController] = [UIViewController](), coordinator: OnboardingViewControllerCoordinator) {
         self.pages = pages
-//        self.coordinator = coordinator
+        self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -104,6 +104,7 @@ extension OnboardingViewController: OnboardingPartViewControllerDelegate {
             pageController.setViewControllers([pages[3]], direction: .forward, animated: true)
         case 3:
             print("Last page")
+            coordinator.didTapFinishOnboardingButton()
         default:
             break
         }

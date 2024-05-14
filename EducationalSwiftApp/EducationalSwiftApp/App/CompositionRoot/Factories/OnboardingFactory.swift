@@ -8,14 +8,14 @@
 import UIKit
 
 protocol OnboardingFactory {
-    func makeModule() -> UIViewController
+    func makeModule(coordinator: OnboardingViewControllerCoordinator) -> UIViewController
 }
 
 struct OnboardingFactoryImpl: OnboardingFactory {
     
-    func makeModule() -> UIViewController {
+    func makeModule(coordinator: OnboardingViewControllerCoordinator) -> UIViewController {
         let pages = self.makeOnboardingScreens()
-        let onboardingViewController = OnboardingViewController(pages: pages)
+        let onboardingViewController = OnboardingViewController(pages: pages, coordinator: coordinator)
         return onboardingViewController
     }
     
