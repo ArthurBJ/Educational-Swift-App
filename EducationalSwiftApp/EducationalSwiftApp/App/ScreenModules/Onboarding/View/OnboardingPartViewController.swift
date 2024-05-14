@@ -52,7 +52,7 @@ extension OnboardingPartViewController {
         questionLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(10)
             make.top.equalTo(view.safeAreaLayoutGuide).offset(40)
-            make.width.equalToSuperview().multipliedBy(0.5)
+            make.width.equalToSuperview()
         }
         
         view.addSubview(answerButton)
