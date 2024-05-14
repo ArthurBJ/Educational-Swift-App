@@ -8,7 +8,14 @@
 import UIKit
 import SnapKit
 
+protocol OnboardingPartViewControllerDelegate: AnyObject {
+    func didTapAnswerButton()
+}
+
 final class OnboardingPartViewController: UIViewController {
+    
+    // MARK: - Properties
+    weak var delegate: OnboardingPartViewControllerDelegate?
     
     // MARK: - Views
     private lazy var questionLabel: UILabel = {
@@ -32,6 +39,7 @@ final class OnboardingPartViewController: UIViewController {
         view.backgroundColor = UIColor(hexString: "#000A23")
         
         setConstraints()
+        configButtonsActions()
     }
     
     // MARK: - methods
@@ -41,6 +49,19 @@ final class OnboardingPartViewController: UIViewController {
         answer2Button.setTitle(answer2, for: .normal)
         answer3Button.setTitle(answer3, for: .normal)
         answer4Button.setTitle(answer4, for: .normal)
+    }
+    
+    private func configButtonsActions() {
+        answerButton.addTarget(self, action: #selector(answerButtonAction), for: .touchUpInside)
+        answer2Button.addTarget(self, action: #selector(answerButtonAction), for: .touchUpInside)
+        answer3Button.addTarget(self, action: #selector(answerButtonAction), for: .touchUpInside)
+        answer4Button.addTarget(self, action: #selector(answerButtonAction), for: .touchUpInside)
+    }
+    
+    @objc private func answerButtonAction() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
+            self?.delegate?.didTapAnswerButton()
+        }
     }
     
 }

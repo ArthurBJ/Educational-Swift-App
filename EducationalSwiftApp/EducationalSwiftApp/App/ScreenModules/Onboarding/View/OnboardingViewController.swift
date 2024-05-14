@@ -14,13 +14,13 @@ protocol OnboardingViewControllerCoordinator: AnyObject {
 
 final class OnboardingViewController: UIViewController {
     
-    // MARK: - Properties
+    // MARK: Properties
 //    private var coordinator: OnboardingViewControllerCoordinator
     private var pages = [UIViewController]()
     private var currentPageIndex: Int = 0
     
     
-    // MARK: - Views
+    // MARK: Views
     private lazy var pageController: UIPageViewController = {
         let controller = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
         controller.view.backgroundColor = UIColor(hexString: "#000A23")
@@ -35,7 +35,7 @@ final class OnboardingViewController: UIViewController {
         return pageControl
     }()
 
-    // MARK: - Initializers
+    // MARK: Initializers
     init(pages: [UIViewController] = [UIViewController]() /*coordinator: OnboardingViewControllerCoordinator*/) {
         self.pages = pages
 //        self.coordinator = coordinator
@@ -46,15 +46,16 @@ final class OnboardingViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Life Cycle
+    // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         print(pages.count)
         
         configView()
+        setupStartOnboardingPartDelegate()
     }
 
-    // MARK: - Private methods
+    // MARK: Private methods
     private func configView() {
         view.backgroundColor = .systemBackground
         
@@ -71,9 +72,43 @@ final class OnboardingViewController: UIViewController {
         pageController.didMove(toParent: self)
     }
     
-    private func setupPageControl() {
-        
+    private func setupStartOnboardingPartDelegate() {
+        switch currentPageIndex {
+        case 0:
+            (pages[0] as? OnboardingPartViewController)?.delegate = self
+        default:
+            print("default")
+        }
     }
+}
+
+
+// MARK: - OnboardingPartViewControllerDelegate
+extension OnboardingViewController: OnboardingPartViewControllerDelegate {
+    func didTapAnswerButton() {
+        switch pageControl.currentPage {
+        case 0:
+            currentPageIndex = 1
+            pageControl.currentPage = 1
+            (pages[currentPageIndex] as? OnboardingPartViewController)?.delegate = self
+            pageController.setViewControllers([pages[1]], direction: .forward, animated: true)
+        case 1:
+            currentPageIndex = 2
+            pageControl.currentPage = 2
+            (pages[currentPageIndex] as? OnboardingPartViewController)?.delegate = self
+            pageController.setViewControllers([pages[2]], direction: .forward, animated: true)
+        case 2:
+            currentPageIndex = 3
+            pageControl.currentPage = 3
+            (pages[currentPageIndex] as? OnboardingPartViewController)?.delegate = self
+            pageController.setViewControllers([pages[3]], direction: .forward, animated: true)
+        case 3:
+            print("Last page")
+        default:
+            break
+        }
+    }
+    
 }
 
 
@@ -82,6 +117,7 @@ extension OnboardingViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         if let index = pages.firstIndex(of: pendingViewControllers.first!) {
             currentPageIndex = index
+            (pages[index] as? OnboardingPartViewController)?.delegate = self
         }
     }
     
