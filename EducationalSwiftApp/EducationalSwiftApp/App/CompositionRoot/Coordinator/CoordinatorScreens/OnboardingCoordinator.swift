@@ -32,7 +32,6 @@ final class OnboardingCoordinator: Coordinator {
 
 extension OnboardingCoordinator: OnboardingViewControllerCoordinator {
     func didTapFinishOnboardingButton() {
-        print("Go to tab bar screen")
         delegate?.didFinishOnboarding()
     }
     
