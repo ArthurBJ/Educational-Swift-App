@@ -10,8 +10,8 @@
 		C9336FC72BF3AC6B008DEE76 /* OnboardingPartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9336FC62BF3AC6B008DEE76 /* OnboardingPartViewController.swift */; };
 		C9336FC92BF3B86A008DEE76 /* EduOnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9336FC82BF3B86A008DEE76 /* EduOnboardingButton.swift */; };
 		C9336FCB2BF3BD21008DEE76 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9336FCA2BF3BD21008DEE76 /* UIColor + Extension.swift */; };
-		C9336FD92BF41394008DEE76 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9336FD82BF41394008DEE76 /* OnboardingViewModel.swift */; };
 		C9336FDB2BF413EA008DEE76 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9336FDA2BF413EA008DEE76 /* UserDefaultsManager.swift */; };
+		C9336FDE2BF41573008DEE76 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9336FDD2BF41573008DEE76 /* OnboardingViewModel.swift */; };
 		C9DBD7F42BF259AD008094B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F32BF259AD008094B3 /* AppDelegate.swift */; };
 		C9DBD7F62BF259AD008094B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F52BF259AD008094B3 /* SceneDelegate.swift */; };
 		C9DBD7F82BF259AD008094B3 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F72BF259AD008094B3 /* OnboardingViewController.swift */; };
@@ -32,8 +32,8 @@
 		C9336FC62BF3AC6B008DEE76 /* OnboardingPartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPartViewController.swift; sourceTree = "<group>"; };
 		C9336FC82BF3B86A008DEE76 /* EduOnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduOnboardingButton.swift; sourceTree = "<group>"; };
 		C9336FCA2BF3BD21008DEE76 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
-		C9336FD82BF41394008DEE76 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingViewModel.swift; path = EducationalSwiftApp/App/CompositionRoot/Coordinator/CoordinatorScreens/OnboardingViewModel.swift; sourceTree = SOURCE_ROOT; };
 		C9336FDA2BF413EA008DEE76 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		C9336FDD2BF41573008DEE76 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		C9DBD7F02BF259AD008094B3 /* EducationalSwiftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EducationalSwiftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9DBD7F32BF259AD008094B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9DBD7F52BF259AD008094B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +68,14 @@
 				3B41F659FE121E4EAA448995 /* Pods_EducationalSwiftApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9336FDC2BF41554008DEE76 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C9336FDD2BF41573008DEE76 /* OnboardingViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C9DBD7E72BF259AD008094B3 = {
@@ -240,8 +248,8 @@
 		C9DBD81F2BF25B10008094B3 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				C9336FDC2BF41554008DEE76 /* ViewModel */,
 				C9DBD82E2BF277DB008094B3 /* Model */,
-				C9DBD82D2BF277D5008094B3 /* ViewModel */,
 				C9DBD82C2BF277CF008094B3 /* View */,
 			);
 			path = Onboarding;
@@ -271,14 +279,6 @@
 				C9336FC62BF3AC6B008DEE76 /* OnboardingPartViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		C9DBD82D2BF277D5008094B3 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				C9336FD82BF41394008DEE76 /* OnboardingViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C9DBD82E2BF277DB008094B3 /* Model */ = {
@@ -417,10 +417,10 @@
 				C9DBD7F82BF259AD008094B3 /* OnboardingViewController.swift in Sources */,
 				C9336FC92BF3B86A008DEE76 /* EduOnboardingButton.swift in Sources */,
 				C9DBD7F42BF259AD008094B3 /* AppDelegate.swift in Sources */,
-				C9336FD92BF41394008DEE76 /* OnboardingViewModel.swift in Sources */,
 				C9DBD8212BF274C4008094B3 /* Coordinator.swift in Sources */,
 				C9DBD7FE2BF259AD008094B3 /* EducationalSwiftApp.xcdatamodeld in Sources */,
 				C9DBD8292BF27613008094B3 /* OnboardingCoordinator.swift in Sources */,
+				C9336FDE2BF41573008DEE76 /* OnboardingViewModel.swift in Sources */,
 				C9336FDB2BF413EA008DEE76 /* UserDefaultsManager.swift in Sources */,
 				C9336FCB2BF3BD21008DEE76 /* UIColor + Extension.swift in Sources */,
 				C9DBD8272BF27566008094B3 /* AppFactory.swift in Sources */,
