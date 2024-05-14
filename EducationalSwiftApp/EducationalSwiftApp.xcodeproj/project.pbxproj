@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9336FC72BF3AC6B008DEE76 /* OnboardingPartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9336FC62BF3AC6B008DEE76 /* OnboardingPartViewController.swift */; };
+		C9336FC92BF3B86A008DEE76 /* EduOnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9336FC82BF3B86A008DEE76 /* EduOnboardingButton.swift */; };
+		C9336FCB2BF3BD21008DEE76 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9336FCA2BF3BD21008DEE76 /* UIColor + Extension.swift */; };
 		C9DBD7F42BF259AD008094B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F32BF259AD008094B3 /* AppDelegate.swift */; };
 		C9DBD7F62BF259AD008094B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F52BF259AD008094B3 /* SceneDelegate.swift */; };
 		C9DBD7F82BF259AD008094B3 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F72BF259AD008094B3 /* OnboardingViewController.swift */; };
@@ -24,6 +27,9 @@
 /* Begin PBXFileReference section */
 		35BA9516663A73100ABF0BC4 /* Pods-EducationalSwiftApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EducationalSwiftApp.release.xcconfig"; path = "Target Support Files/Pods-EducationalSwiftApp/Pods-EducationalSwiftApp.release.xcconfig"; sourceTree = "<group>"; };
 		3B41F659FE121E4EAA448995 /* Pods_EducationalSwiftApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EducationalSwiftApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9336FC62BF3AC6B008DEE76 /* OnboardingPartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPartViewController.swift; sourceTree = "<group>"; };
+		C9336FC82BF3B86A008DEE76 /* EduOnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduOnboardingButton.swift; sourceTree = "<group>"; };
+		C9336FCA2BF3BD21008DEE76 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		C9DBD7F02BF259AD008094B3 /* EducationalSwiftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EducationalSwiftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9DBD7F32BF259AD008094B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9DBD7F52BF259AD008094B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +162,7 @@
 		C9DBD8162BF25A66008094B3 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				C9336FCA2BF3BD21008DEE76 /* UIColor + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -170,6 +177,7 @@
 		C9DBD8182BF25A76008094B3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C9336FC82BF3B86A008DEE76 /* EduOnboardingButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -255,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				C9DBD7F72BF259AD008094B3 /* OnboardingViewController.swift */,
+				C9336FC62BF3AC6B008DEE76 /* OnboardingPartViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -279,7 +288,6 @@
 				CCDF193581BC742E04117A92 /* Pods-EducationalSwiftApp.debug.xcconfig */,
 				35BA9516663A73100ABF0BC4 /* Pods-EducationalSwiftApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -397,13 +405,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9336FC72BF3AC6B008DEE76 /* OnboardingPartViewController.swift in Sources */,
 				C9DBD82B2BF27640008094B3 /* OnboardingFactory.swift in Sources */,
 				C9DBD8232BF274EF008094B3 /* AppCoordinator.swift in Sources */,
 				C9DBD7F82BF259AD008094B3 /* OnboardingViewController.swift in Sources */,
+				C9336FC92BF3B86A008DEE76 /* EduOnboardingButton.swift in Sources */,
 				C9DBD7F42BF259AD008094B3 /* AppDelegate.swift in Sources */,
 				C9DBD8212BF274C4008094B3 /* Coordinator.swift in Sources */,
 				C9DBD7FE2BF259AD008094B3 /* EducationalSwiftApp.xcdatamodeld in Sources */,
 				C9DBD8292BF27613008094B3 /* OnboardingCoordinator.swift in Sources */,
+				C9336FCB2BF3BD21008DEE76 /* UIColor + Extension.swift in Sources */,
 				C9DBD8272BF27566008094B3 /* AppFactory.swift in Sources */,
 				C9DBD7F62BF259AD008094B3 /* SceneDelegate.swift in Sources */,
 			);
