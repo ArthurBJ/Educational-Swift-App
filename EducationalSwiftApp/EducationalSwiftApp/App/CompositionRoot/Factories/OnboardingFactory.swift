@@ -14,8 +14,9 @@ protocol OnboardingFactory {
 struct OnboardingFactoryImpl: OnboardingFactory {
     
     func makeModule(coordinator: OnboardingViewControllerCoordinator) -> UIViewController {
+        let viewModel = OnboardingViewModel()
         let pages = self.makeOnboardingScreens()
-        let onboardingViewController = OnboardingViewController(pages: pages, coordinator: coordinator)
+        let onboardingViewController = OnboardingViewController(pages: pages, coordinator: coordinator, viewModel: viewModel)
         return onboardingViewController
     }
     

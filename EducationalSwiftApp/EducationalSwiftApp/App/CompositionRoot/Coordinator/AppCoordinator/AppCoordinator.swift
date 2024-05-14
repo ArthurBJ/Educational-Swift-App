@@ -26,7 +26,11 @@ final class AppCoordinator: Coordinator {
     
     private func startSomeCoordinator() {
         // TODO: check in UserDefaults onbaording pass
-        startOnboardingCoordinator()
+        if UserDefaultsManager.shared.onboardingPassed {
+            startMainTabBarCoordinator()
+        } else {
+            startOnboardingCoordinator()
+        }
     }
     
     private func startOnboardingCoordinator() {
@@ -35,7 +39,7 @@ final class AppCoordinator: Coordinator {
     }
     
     private func startMainTabBarCoordinator() {
-        
+        print("Main Tab Bar")
     }
     
     private func configWindow(window: UIWindow?) {
@@ -50,6 +54,7 @@ extension AppCoordinator: OnboardingCoordinatorDelegate {
         print("something here")
         navigation.viewControllers = []
         onboardingCoordinator = nil
+        startSomeCoordinator()
     }
     
 }
