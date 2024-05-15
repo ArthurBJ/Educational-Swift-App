@@ -10,6 +10,7 @@ import UIKit
 protocol ProfileFactory {
     func makeProfileController(coordinator: ProfileViewControllerCoordinator) -> UIViewController
     func makeTabBarItem(navigation: UINavigationController)
+    func makeEditProfileViewController() -> UIViewController
 }
 
 struct ProfileFactoryImpl: ProfileFactory, ItemTabBarFactory {
@@ -23,8 +24,10 @@ struct ProfileFactoryImpl: ProfileFactory, ItemTabBarFactory {
     func makeTabBarItem(navigation: UINavigationController) {
         makeItemTabBar(navigation: navigation, title: "Profile", image: "person", selectedImage: "person.fill")
     }
+    
+    func makeEditProfileViewController() -> UIViewController {
+        let controller = EditProfileViewController()
+        controller.title = "Изменить профиль"
+        return controller
+    }
 }
-
-//extension ProfileFactoryImpl: ItemTabBarFactory {
-//
-//}

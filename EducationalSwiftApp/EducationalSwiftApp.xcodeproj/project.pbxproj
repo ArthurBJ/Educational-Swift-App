@@ -20,6 +20,7 @@
 		C9336FEF2BF41F99008DEE76 /* ProfileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9336FEE2BF41F99008DEE76 /* ProfileFactory.swift */; };
 		C9336FF12BF41FFE008DEE76 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9336FF02BF41FFE008DEE76 /* ProfileCoordinator.swift */; };
 		C9336FF32BF42387008DEE76 /* ItemTabBarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9336FF22BF42387008DEE76 /* ItemTabBarFactory.swift */; };
+		C9336FFA2BF4B72B008DEE76 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9336FF92BF4B72B008DEE76 /* EditProfileViewController.swift */; };
 		C9DBD7F42BF259AD008094B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F32BF259AD008094B3 /* AppDelegate.swift */; };
 		C9DBD7F62BF259AD008094B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F52BF259AD008094B3 /* SceneDelegate.swift */; };
 		C9DBD7F82BF259AD008094B3 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F72BF259AD008094B3 /* OnboardingViewController.swift */; };
@@ -50,6 +51,7 @@
 		C9336FEE2BF41F99008DEE76 /* ProfileFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFactory.swift; sourceTree = "<group>"; };
 		C9336FF02BF41FFE008DEE76 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		C9336FF22BF42387008DEE76 /* ItemTabBarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTabBarFactory.swift; sourceTree = "<group>"; };
+		C9336FF92BF4B72B008DEE76 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		C9DBD7F02BF259AD008094B3 /* EducationalSwiftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EducationalSwiftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9DBD7F32BF259AD008094B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9DBD7F52BF259AD008094B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,39 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		C9336FF52BF4B6FF008DEE76 /* ProfileFlow */ = {
+			isa = PBXGroup;
+			children = (
+				C9336FF62BF4B70C008DEE76 /* EditProfile */,
+				C9336FE72BF41A6D008DEE76 /* Profile */,
+			);
+			path = ProfileFlow;
+			sourceTree = "<group>";
+		};
+		C9336FF62BF4B70C008DEE76 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				C9336FF82BF4B718008DEE76 /* ViewModel */,
+				C9336FF72BF4B713008DEE76 /* View */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		C9336FF72BF4B713008DEE76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C9336FF92BF4B72B008DEE76 /* EditProfileViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C9336FF82BF4B718008DEE76 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		C9DBD7E72BF259AD008094B3 = {
 			isa = PBXGroup;
 			children = (
@@ -187,7 +222,7 @@
 		C9DBD80F2BF25A14008094B3 /* ScreenModules */ = {
 			isa = PBXGroup;
 			children = (
-				C9336FE72BF41A6D008DEE76 /* Profile */,
+				C9336FF52BF4B6FF008DEE76 /* ProfileFlow */,
 				C9336FDF2BF415E0008DEE76 /* MainTabBar */,
 				C9DBD81F2BF25B10008094B3 /* Onboarding */,
 				C9DBD81E2BF25AFD008094B3 /* LaunchScreen */,
@@ -485,6 +520,7 @@
 				C9DBD7F42BF259AD008094B3 /* AppDelegate.swift in Sources */,
 				C9DBD8212BF274C4008094B3 /* Coordinator.swift in Sources */,
 				C9DBD7FE2BF259AD008094B3 /* EducationalSwiftApp.xcdatamodeld in Sources */,
+				C9336FFA2BF4B72B008DEE76 /* EditProfileViewController.swift in Sources */,
 				C9336FED2BF41CCD008DEE76 /* ProfileViewController.swift in Sources */,
 				C9336FE62BF4166C008DEE76 /* MainTabBarCoordinator.swift in Sources */,
 				C9336FEB2BF41AC8008DEE76 /* ProfileViewNavigation.swift in Sources */,

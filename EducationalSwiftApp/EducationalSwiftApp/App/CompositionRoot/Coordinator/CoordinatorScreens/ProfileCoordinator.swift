@@ -31,6 +31,7 @@ extension ProfileCoordinator: ProfileViewControllerCoordinator {
         switch profileViewNavigation {
         case .editProfile:
             print("Edit profile")
+            navigation.pushViewController(factory.makeEditProfileViewController(), animated: true)
         case .changeTheme:
             print("Change theme")
         }
