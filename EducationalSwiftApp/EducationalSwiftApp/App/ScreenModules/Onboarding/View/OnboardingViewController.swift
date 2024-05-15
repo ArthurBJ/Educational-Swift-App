@@ -16,6 +16,7 @@ final class OnboardingViewController: UIViewController {
     
     // MARK: Properties
     private var coordinator: OnboardingViewControllerCoordinator
+    private let viewModel: OnboardingViewModel
     private var pages = [UIViewController]()
     private var currentPageIndex: Int = 0
     
@@ -36,9 +37,12 @@ final class OnboardingViewController: UIViewController {
     }()
 
     // MARK: Initializers
-    init(pages: [UIViewController] = [UIViewController](), coordinator: OnboardingViewControllerCoordinator) {
+    init(pages: [UIViewController] = [UIViewController](),
+         coordinator: OnboardingViewControllerCoordinator,
+         viewModel: OnboardingViewModel) {
         self.pages = pages
         self.coordinator = coordinator
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -49,7 +53,6 @@ final class OnboardingViewController: UIViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(pages.count)
         
         configView()
         setupStartOnboardingPartDelegate()
@@ -103,7 +106,7 @@ extension OnboardingViewController: OnboardingPartViewControllerDelegate {
             (pages[currentPageIndex] as? OnboardingPartViewController)?.delegate = self
             pageController.setViewControllers([pages[3]], direction: .forward, animated: true)
         case 3:
-            print("Last page")
+            viewModel.onboardingFinish()
             coordinator.didTapFinishOnboardingButton()
         default:
             break

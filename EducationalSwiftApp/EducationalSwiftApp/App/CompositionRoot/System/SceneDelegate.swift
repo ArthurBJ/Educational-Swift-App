@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         appFactory = AppFactoryImpl()
         window = UIWindow(windowScene: windowScene)
         
-        appCoordinator = AppCoordinator(navigation: navigation, appFactory: appFactory, window: window)
+        appCoordinator = AppCoordinator(navigation: NavigationImpl(rootViewController: UINavigationController()), appFactory: appFactory, window: window)
         appCoordinator.start()
     }
 

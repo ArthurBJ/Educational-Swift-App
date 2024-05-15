@@ -9,47 +9,55 @@ import UIKit
 
 final class AppCoordinator: Coordinator {
     
-    var navigation: UINavigationController
+    var navigation: Navigation
     private let appFactory: AppFactory
-    private var onboardingCoordinator: Coordinator?
+    var childCoordinators: [Coordinator] = []
     
-    init(navigation: UINavigationController, appFactory: AppFactory, window: UIWindow?) {
+    init(navigation: Navigation, appFactory: AppFactory, window: UIWindow?) {
         self.navigation = navigation
         self.appFactory = appFactory
         configWindow(window: window)
     }
     
     func start() {
-        
         startSomeCoordinator()
     }
     
     private func startSomeCoordinator() {
-        // TODO: check in UserDefaults onbaording pass
-        startOnboardingCoordinator()
+        UserDefaultsManager.shared.onboardingPassed ? startMainTabBarCoordinator() : startOnboardingCoordinator()
     }
     
     private func startOnboardingCoordinator() {
-        onboardingCoordinator = appFactory.makeOnboardingCoordinator(navigation: navigation, delegate: self)
-        onboardingCoordinator?.start()
+        let onboardingCoordinator = appFactory.makeOnboardingCoordinator(navigation: navigation, delegate: self)
+        addChildCoordinatorStart(onboardingCoordinator)
     }
     
     private func startMainTabBarCoordinator() {
-        
+        let mainTabBarCoordinator = appFactory.makeMainTabBarCoordinator(navigation: navigation)
+        addChildCoordinatorStart(mainTabBarCoordinator)
     }
     
     private func configWindow(window: UIWindow?) {
-        window?.rootViewController = navigation
+        window?.rootViewController = navigation.rootViewController
         window?.makeKeyAndVisible()
+    }
+    
+    private func cleanCoordinatorsAndStart() {
+        navigation.viewControllers = []
+        clearAllChildCoordinator()
+        startSomeCoordinator()
+    }
+}
+
+
+// MARK: - OnboardingCoordinatorDelegate
+extension AppCoordinator: OnboardingCoordinatorDelegate {
+    func didFinishOnboarding() {
+        cleanCoordinatorsAndStart()
     }
     
 }
 
-extension AppCoordinator: OnboardingCoordinatorDelegate {
-    func didFinishOnboarding() {
-        print("something here")
-        navigation.viewControllers = []
-        onboardingCoordinator = nil
-    }
-    
-}
+
+// MARK: - ParentCoordinator
+extension AppCoordinator: ParentCoordinator { }
