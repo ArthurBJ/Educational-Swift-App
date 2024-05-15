@@ -16,12 +16,29 @@ final class TrainingListViewController: UIViewController {
     
     // MARK: Properties
     private weak var coordinator: TrainingListViewControllerCoordinator?
+    fileprivate var sections: [SectionData] = [
+        SectionData(isOpen: true,
+                    data: [
+                        TrainingListDTO(trainingImage: "pencil.line", typeOfTraining: "Теория", titleTraining: "Swift", experience: "+ 10xp"),
+                        TrainingListDTO(trainingImage: "pencil.line", typeOfTraining: "Теория", titleTraining: "Swift", experience: "+ 10xp"),
+                        TrainingListDTO(trainingImage: "pencil.line", typeOfTraining: "Теория", titleTraining: "Swift", experience: "+ 10xp")
+                    ]),
+        SectionData(isOpen: true, data: [
+            TrainingListDTO(trainingImage: "newspaper", typeOfTraining: "Теория", titleTraining: "Swift", experience: "+ 10xp"),
+            TrainingListDTO(trainingImage: "newspaper", typeOfTraining: "Теория", titleTraining: "Swift", experience: "+ 10xp")
+        ]),
+        SectionData(isOpen: true, data: [
+            TrainingListDTO(trainingImage: "pencil.line", typeOfTraining: "Теория", titleTraining: "Swift", experience: "+ 10xp")
+        ])
+    ]
     
     
     // MARK: Views
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.delegate = self
+        tableView.dataSource = self
         return tableView
     }()
     
@@ -47,27 +64,37 @@ final class TrainingListViewController: UIViewController {
     private func configView() {
         view.backgroundColor = .systemBackground
         
-        configTableView()
         setConstraints()
     }
     
-    private func configTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-    }
 }
 
 
 // MARK: - UITableViewDataSource
 extension TrainingListViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return sections[section].data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "Text"
+        let section = sections[indexPath.section]
+        let sectionData = section.data[indexPath.row]
+        cell.textLabel?.text = sectionData.titleTraining
+        cell.imageView?.image = UIImage(systemName: sectionData.trainingImage ?? "")
+        // newspaper, pencil.line
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let button = UIButton()
+        button.setTitle("Press", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        return button
     }
     
 }
