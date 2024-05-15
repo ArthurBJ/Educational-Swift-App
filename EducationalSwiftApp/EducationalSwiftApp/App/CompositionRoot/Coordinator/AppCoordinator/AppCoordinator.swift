@@ -11,8 +11,7 @@ final class AppCoordinator: Coordinator {
     
     var navigation: Navigation
     private let appFactory: AppFactory
-    private var onboardingCoordinator: Coordinator?
-    private var mainTabBarCoordinator: Coordinator?
+    var childCoordinators: [Coordinator] = []
     
     init(navigation: Navigation, appFactory: AppFactory, window: UIWindow?) {
         self.navigation = navigation
@@ -21,7 +20,6 @@ final class AppCoordinator: Coordinator {
     }
     
     func start() {
-        
         startSomeCoordinator()
     }
     
@@ -30,13 +28,13 @@ final class AppCoordinator: Coordinator {
     }
     
     private func startOnboardingCoordinator() {
-        onboardingCoordinator = appFactory.makeOnboardingCoordinator(navigation: navigation, delegate: self)
-        onboardingCoordinator?.start()
+        let onboardingCoordinator = appFactory.makeOnboardingCoordinator(navigation: navigation, delegate: self)
+        addChildCoordinatorStart(onboardingCoordinator)
     }
     
     private func startMainTabBarCoordinator() {
-        mainTabBarCoordinator = appFactory.makeMainTabBarCoordinator(navigation: navigation)
-        mainTabBarCoordinator?.start()
+        let mainTabBarCoordinator = appFactory.makeMainTabBarCoordinator(navigation: navigation)
+        addChildCoordinatorStart(mainTabBarCoordinator)
     }
     
     private func configWindow(window: UIWindow?) {
@@ -44,13 +42,22 @@ final class AppCoordinator: Coordinator {
         window?.makeKeyAndVisible()
     }
     
+    private func cleanCoordinatorsAndStart() {
+        navigation.viewControllers = []
+        clearAllChildCoordinator()
+        startSomeCoordinator()
+    }
 }
 
+
+// MARK: - OnboardingCoordinatorDelegate
 extension AppCoordinator: OnboardingCoordinatorDelegate {
     func didFinishOnboarding() {
-        navigation.viewControllers = []
-        onboardingCoordinator = nil
-        startSomeCoordinator()
+        cleanCoordinatorsAndStart()
     }
     
 }
+
+
+// MARK: - ParentCoordinator
+extension AppCoordinator: ParentCoordinator { }
