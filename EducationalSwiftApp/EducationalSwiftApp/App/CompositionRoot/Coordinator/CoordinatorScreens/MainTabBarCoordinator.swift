@@ -11,7 +11,7 @@ final class MainTabBarCoordinator: Coordinator {
     
     var navigation: UINavigationController
     private let factory: MainTabBarFactory
-    private var profileCoordinator: Coordinator?
+    var childCoordinators: [Coordinator] = []
     
     init(navigation: UINavigationController, factory: MainTabBarFactory) {
         self.navigation = navigation
@@ -22,10 +22,11 @@ final class MainTabBarCoordinator: Coordinator {
         let navigationTabBar = factory.makeMainTabBar()
         navigation.pushViewController(navigationTabBar, animated: false)
         navigation.navigationBar.isHidden = true
-        profileCoordinator = factory.makeProfileCoordinator()
-        guard let profileCoordinator = profileCoordinator else { return }
-        navigationTabBar.viewControllers = [profileCoordinator.navigation]
-        profileCoordinator.start()
+        
+        childCoordinators = factory.makeChildCoordinators()
+        let childNavigation = childCoordinators.map { $0.navigation }
+        childCoordinators.forEach { $0.start() }
+        navigationTabBar.viewControllers = childNavigation
     }
     
     
