@@ -10,8 +10,6 @@ import UIKit
 protocol MainTabBarFactory {
     func makeMainTabBar() -> UITabBarController
     func makeChildCoordinators() -> [Coordinator]
-//    func makeProfileCoordinator() -> Coordinator
-//    func makeTopicsCoordinator() -> Coordinator
 }
 
 struct MainTabBarFactoryImpl: MainTabBarFactory {
@@ -19,7 +17,6 @@ struct MainTabBarFactoryImpl: MainTabBarFactory {
     func makeMainTabBar() -> UITabBarController {
         let mainTabBar = MainTabBarController()
         mainTabBar.title = "Основы Swift"
-//        mainTabBar.viewControllers = []
         return mainTabBar
     }
     
@@ -32,21 +29,21 @@ struct MainTabBarFactoryImpl: MainTabBarFactory {
     
     private func makeProfileCoordinator() -> Coordinator {
         let factory = ProfileFactoryImpl()
-        let navigation = UINavigationController()
+        let navigation = NavigationImpl(rootViewController: UINavigationController())
         let coordinator = ProfileCoordinator(navigation: navigation, factory: factory)
         return coordinator
     }
     
     private func makeTopicsCoordinator() -> Coordinator {
         let factory = TopicsFactoryImpl()
-        let navigation = UINavigationController()
+        let navigation = NavigationImpl(rootViewController: UINavigationController())
         let coordinator = TopicsCoordinator(navigation: navigation, factory: factory)
         return coordinator
     }
     
     private func makeTrainingListCoordinator() -> Coordinator {
         let factory = TrainingListFactoryImpl()
-        let navigation = UINavigationController()
+        let navigation = NavigationImpl(rootViewController: UINavigationController())
         let coordinator = TrainingListCoordinator(navigation: navigation, factory: factory)
         return coordinator
     }

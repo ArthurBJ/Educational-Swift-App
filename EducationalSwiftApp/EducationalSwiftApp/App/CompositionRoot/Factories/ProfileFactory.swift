@@ -9,7 +9,7 @@ import UIKit
 
 protocol ProfileFactory {
     func makeProfileController(coordinator: ProfileViewControllerCoordinator) -> UIViewController
-    func makeTabBarItem(navigation: UINavigationController)
+    func makeTabBarItem(navigation: Navigation)
     func makeEditProfileViewController() -> UIViewController
 }
 
@@ -21,7 +21,7 @@ struct ProfileFactoryImpl: ProfileFactory, ItemTabBarFactory {
         return controller
     }
     
-    func makeTabBarItem(navigation: UINavigationController) {
+    func makeTabBarItem(navigation: Navigation) {
         makeItemTabBar(navigation: navigation, title: "Profile", image: "person", selectedImage: "person.fill")
     }
     

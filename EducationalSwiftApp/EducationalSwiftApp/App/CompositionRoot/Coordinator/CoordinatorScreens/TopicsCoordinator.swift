@@ -9,10 +9,10 @@ import UIKit
 
 final class TopicsCoordinator: Coordinator {
     
-    var navigation: UINavigationController
+    var navigation: Navigation
     private let factory: TopicsFactory
     
-    init(navigation: UINavigationController, factory: TopicsFactory) {
+    init(navigation: Navigation, factory: TopicsFactory) {
         self.navigation = navigation
         self.factory = factory
     }

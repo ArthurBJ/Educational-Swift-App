@@ -9,7 +9,7 @@ import UIKit
 
 protocol TopicsFactory {
     func makeTopicsController() -> UIViewController
-    func makeItemTabBar(navigation: UINavigationController)
+    func makeItemTabBar(navigation: Navigation)
 }
 
 struct TopicsFactoryImpl: TopicsFactory, ItemTabBarFactory {
@@ -20,7 +20,7 @@ struct TopicsFactoryImpl: TopicsFactory, ItemTabBarFactory {
         return controller
     }
     
-    func makeItemTabBar(navigation: UINavigationController) {
+    func makeItemTabBar(navigation: Navigation) {
         makeItemTabBar(navigation: navigation, title: "Темы", image: "book", selectedImage: "book.fill")
     }
 }

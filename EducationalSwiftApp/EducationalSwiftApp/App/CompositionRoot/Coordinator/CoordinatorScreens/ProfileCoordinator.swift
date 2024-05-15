@@ -9,10 +9,10 @@ import UIKit
 
 final class ProfileCoordinator: Coordinator {
     
-    var navigation: UINavigationController
+    var navigation: Navigation
     private let factory: ProfileFactory
     
-    init(navigation: UINavigationController, factory: ProfileFactory) {
+    init(navigation: Navigation, factory: ProfileFactory) {
         self.navigation = navigation
         self.factory = factory
     }

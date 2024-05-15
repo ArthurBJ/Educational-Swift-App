@@ -30,6 +30,7 @@
 		C93370132BF4C7BB008DEE76 /* TrainingListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93370122BF4C7BB008DEE76 /* TrainingListFactory.swift */; };
 		C93370152BF4C7EC008DEE76 /* TrainingTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93370142BF4C7EC008DEE76 /* TrainingTaskViewController.swift */; };
 		C93370172BF4CF26008DEE76 /* TrainingListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93370162BF4CF26008DEE76 /* TrainingListCoordinator.swift */; };
+		C93370192BF4D7FE008DEE76 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93370182BF4D7FE008DEE76 /* Navigation.swift */; };
 		C9DBD7F42BF259AD008094B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F32BF259AD008094B3 /* AppDelegate.swift */; };
 		C9DBD7F62BF259AD008094B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F52BF259AD008094B3 /* SceneDelegate.swift */; };
 		C9DBD7F82BF259AD008094B3 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F72BF259AD008094B3 /* OnboardingViewController.swift */; };
@@ -70,6 +71,7 @@
 		C93370122BF4C7BB008DEE76 /* TrainingListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingListFactory.swift; sourceTree = "<group>"; };
 		C93370142BF4C7EC008DEE76 /* TrainingTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingTaskViewController.swift; sourceTree = "<group>"; };
 		C93370162BF4CF26008DEE76 /* TrainingListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingListCoordinator.swift; sourceTree = "<group>"; };
+		C93370182BF4D7FE008DEE76 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		C9DBD7F02BF259AD008094B3 /* EducationalSwiftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EducationalSwiftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9DBD7F32BF259AD008094B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9DBD7F52BF259AD008094B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -461,6 +463,7 @@
 			children = (
 				C9DBD8202BF274C4008094B3 /* Coordinator.swift */,
 				C9DBD8222BF274EF008094B3 /* AppCoordinator.swift */,
+				C93370182BF4D7FE008DEE76 /* Navigation.swift */,
 			);
 			path = AppCoordinator;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				C9336FC72BF3AC6B008DEE76 /* OnboardingPartViewController.swift in Sources */,
 				C9336FF12BF41FFE008DEE76 /* ProfileCoordinator.swift in Sources */,
 				C9DBD82B2BF27640008094B3 /* OnboardingFactory.swift in Sources */,
+				C93370192BF4D7FE008DEE76 /* Navigation.swift in Sources */,
 				C9336FE22BF415F2008DEE76 /* MainTabBarController.swift in Sources */,
 				C93370082BF4BB2A008DEE76 /* TopicsCoordinator.swift in Sources */,
 				C9DBD8232BF274EF008094B3 /* AppCoordinator.swift in Sources */,

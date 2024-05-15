@@ -13,11 +13,11 @@ protocol OnboardingCoordinatorDelegate: AnyObject {
 
 final class OnboardingCoordinator: Coordinator {
     
-    var navigation: UINavigationController
+    var navigation: Navigation
     private let onboardingFactory: OnboardingFactory
     weak var delegate: OnboardingCoordinatorDelegate?
     
-    init(navigation: UINavigationController, onboardingFactory: OnboardingFactory, delegate: OnboardingCoordinatorDelegate) {
+    init(navigation: Navigation, onboardingFactory: OnboardingFactory, delegate: OnboardingCoordinatorDelegate) {
         self.navigation = navigation
         self.onboardingFactory = onboardingFactory
         self.delegate = delegate

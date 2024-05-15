@@ -9,12 +9,12 @@ import UIKit
 
 final class AppCoordinator: Coordinator {
     
-    var navigation: UINavigationController
+    var navigation: Navigation
     private let appFactory: AppFactory
     private var onboardingCoordinator: Coordinator?
     private var mainTabBarCoordinator: Coordinator?
     
-    init(navigation: UINavigationController, appFactory: AppFactory, window: UIWindow?) {
+    init(navigation: Navigation, appFactory: AppFactory, window: UIWindow?) {
         self.navigation = navigation
         self.appFactory = appFactory
         configWindow(window: window)
@@ -40,7 +40,7 @@ final class AppCoordinator: Coordinator {
     }
     
     private func configWindow(window: UIWindow?) {
-        window?.rootViewController = navigation
+        window?.rootViewController = navigation.rootViewController
         window?.makeKeyAndVisible()
     }
     

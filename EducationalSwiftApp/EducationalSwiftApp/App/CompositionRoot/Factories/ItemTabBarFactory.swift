@@ -11,7 +11,7 @@ protocol ItemTabBarFactory { }
 
 extension ItemTabBarFactory {
     
-    func makeItemTabBar(navigation: UINavigationController,
+    func makeItemTabBar(navigation: Navigation,
                         title: String,
                         image: String,
                         selectedImage: String
@@ -20,6 +20,6 @@ extension ItemTabBarFactory {
                                       image: UIImage(systemName: image),
                                       selectedImage: UIImage(systemName: selectedImage))
         
-        navigation.tabBarItem = tabBarItem
+        navigation.rootViewController.tabBarItem = tabBarItem
     }
 }

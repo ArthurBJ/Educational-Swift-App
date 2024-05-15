@@ -9,11 +9,11 @@ import UIKit
 
 final class MainTabBarCoordinator: Coordinator {
     
-    var navigation: UINavigationController
+    var navigation: Navigation
     private let factory: MainTabBarFactory
     var childCoordinators: [Coordinator] = []
     
-    init(navigation: UINavigationController, factory: MainTabBarFactory) {
+    init(navigation: Navigation, factory: MainTabBarFactory) {
         self.navigation = navigation
         self.factory = factory
     }
@@ -24,7 +24,7 @@ final class MainTabBarCoordinator: Coordinator {
         navigation.navigationBar.isHidden = true
         
         childCoordinators = factory.makeChildCoordinators()
-        let childNavigation = childCoordinators.map { $0.navigation }
+        let childNavigation = childCoordinators.map { $0.navigation.rootViewController }
         childCoordinators.forEach { $0.start() }
         navigationTabBar.viewControllers = childNavigation
     }

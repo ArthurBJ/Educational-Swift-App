@@ -10,7 +10,7 @@ import UIKit
 protocol TrainingListFactory {
     func makeTrainingListViewController(coordinator: TrainingListViewControllerCoordinator) -> UIViewController
     func makeTrainingTaskViewController(coordinator: TrainingTaskViewControllerCoordinator) -> UIViewController
-    func makeItemTabBar(navigation: UINavigationController)
+    func makeItemTabBar(navigation: Navigation)
 }
 
 struct TrainingListFactoryImpl: TrainingListFactory, ItemTabBarFactory {
@@ -27,7 +27,7 @@ struct TrainingListFactoryImpl: TrainingListFactory, ItemTabBarFactory {
         return controller
     }
     
-    func makeItemTabBar(navigation: UINavigationController) {
+    func makeItemTabBar(navigation: Navigation) {
         makeItemTabBar(navigation: navigation, title: "Обучение", image: "graduationcap", selectedImage: "graduationcap.fill")
     }
     
