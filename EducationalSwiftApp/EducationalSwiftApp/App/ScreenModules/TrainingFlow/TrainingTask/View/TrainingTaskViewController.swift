@@ -38,7 +38,7 @@ final class TrainingTaskViewController: UIViewController {
     
     // MARK: Private methods
     private func configView() {
-        view.backgroundColor = .blue
+        view.backgroundColor = .systemBackground
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "multiply"), style: .plain, target: self, action: #selector(cancelButtonAction))
     }

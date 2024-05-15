@@ -11,6 +11,7 @@ final class TrainingListCoordinator: Coordinator {
     
     var navigation: Navigation
     private let factory: TrainingListFactory
+    private var trainingTaskCoordinator: Coordinator?
     
     init(navigation: Navigation, factory: TrainingListFactory) {
         self.navigation = navigation
@@ -27,22 +28,24 @@ final class TrainingListCoordinator: Coordinator {
 
 extension TrainingListCoordinator: TrainingListViewControllerCoordinator {
     func didSelectTaskCell(id: Int) {
-        print("Opened task")
-        let controller = factory.makeTrainingTaskViewController(coordinator: self)
-        navigation.present(controller, animated: true)
+        trainingTaskCoordinator = factory.makeTrainingTaskCoordinator(delegate: self)
+        trainingTaskCoordinator?.start()
+        
+        guard let trainingTaskCoordinator = trainingTaskCoordinator else { return }
+        navigation.present(trainingTaskCoordinator.navigation.rootViewController, animated: true)
+        trainingTaskCoordinator.navigation.dismissNavigation = { [weak self] in
+            self?.trainingTaskCoordinator = nil
+        }
     }
     
 }
 
 
-extension TrainingListCoordinator: TrainingTaskViewControllerCoordinator {
-    func didTapCancelTaskButton() {
-        print("Cancel task")
+// MARK: - TrainingTaskCoordinatorDelegate
+extension TrainingListCoordinator: TrainingTaskCoordinatorDelegate {
+    func didFinishTrainingTaskFlow() {
+        trainingTaskCoordinator = nil
+        navigation.dismiss(animated: true)
     }
-    
-    func didTapFinishTaskButton() {
-        
-    }
-    
     
 }
