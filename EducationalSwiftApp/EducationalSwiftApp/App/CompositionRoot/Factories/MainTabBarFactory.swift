@@ -26,7 +26,8 @@ struct MainTabBarFactoryImpl: MainTabBarFactory {
     func makeChildCoordinators() -> [Coordinator] {
         let topicsCoordinator = makeTopicsCoordinator()
         let profileCoordinator = makeProfileCoordinator()
-        return [topicsCoordinator, profileCoordinator]
+        let trainingListCoordinator = makeTrainingListCoordinator()
+        return [trainingListCoordinator, topicsCoordinator, profileCoordinator]
     }
     
     private func makeProfileCoordinator() -> Coordinator {
@@ -40,6 +41,13 @@ struct MainTabBarFactoryImpl: MainTabBarFactory {
         let factory = TopicsFactoryImpl()
         let navigation = UINavigationController()
         let coordinator = TopicsCoordinator(navigation: navigation, factory: factory)
+        return coordinator
+    }
+    
+    private func makeTrainingListCoordinator() -> Coordinator {
+        let factory = TrainingListFactoryImpl()
+        let navigation = UINavigationController()
+        let coordinator = TrainingListCoordinator(navigation: navigation, factory: factory)
         return coordinator
     }
     
