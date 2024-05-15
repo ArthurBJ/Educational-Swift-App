@@ -11,7 +11,7 @@ final class TrainingListCoordinator: Coordinator {
     
     var navigation: Navigation
     private let factory: TrainingListFactory
-    private var trainingTaskCoordinator: Coordinator?
+    var childCoordinators: [Coordinator] = []
     
     init(navigation: Navigation, factory: TrainingListFactory) {
         self.navigation = navigation
@@ -28,13 +28,11 @@ final class TrainingListCoordinator: Coordinator {
 
 extension TrainingListCoordinator: TrainingListViewControllerCoordinator {
     func didSelectTaskCell(id: Int) {
-        trainingTaskCoordinator = factory.makeTrainingTaskCoordinator(delegate: self)
-        trainingTaskCoordinator?.start()
-        
-        guard let trainingTaskCoordinator = trainingTaskCoordinator else { return }
+        let trainingTaskCoordinator = factory.makeTrainingTaskCoordinator(delegate: self)
+        addChildCoordinatorStart(trainingTaskCoordinator)
         navigation.present(trainingTaskCoordinator.navigation.rootViewController, animated: true)
         trainingTaskCoordinator.navigation.dismissNavigation = { [weak self] in
-            self?.trainingTaskCoordinator = nil
+            self?.removeChildCoordinator(trainingTaskCoordinator)
         }
     }
     
@@ -43,9 +41,14 @@ extension TrainingListCoordinator: TrainingListViewControllerCoordinator {
 
 // MARK: - TrainingTaskCoordinatorDelegate
 extension TrainingListCoordinator: TrainingTaskCoordinatorDelegate {
-    func didFinishTrainingTaskFlow() {
-        trainingTaskCoordinator = nil
+    func didFinishTrainingTaskFlow(childCoordinator: Coordinator) {
+        childCoordinator.navigation.dismissNavigation = nil
+        removeChildCoordinator(childCoordinator)
         navigation.dismiss(animated: true)
     }
     
 }
+
+
+// MARK: - ParentCoordinator
+extension TrainingListCoordinator: ParentCoordinator { }

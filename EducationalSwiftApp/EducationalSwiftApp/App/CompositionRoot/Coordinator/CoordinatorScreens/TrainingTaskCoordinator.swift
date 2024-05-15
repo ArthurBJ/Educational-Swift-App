@@ -8,7 +8,7 @@
 import UIKit
 
 protocol TrainingTaskCoordinatorDelegate: AnyObject {
-    func didFinishTrainingTaskFlow()
+    func didFinishTrainingTaskFlow(childCoordinator: Coordinator)
 }
 
 final class TrainingTaskCoordinator: Coordinator {
@@ -32,7 +32,7 @@ final class TrainingTaskCoordinator: Coordinator {
 
 extension TrainingTaskCoordinator: TrainingTaskViewControllerCoordinator {
     func didTapCancelTaskButton() {
-        delegate?.didFinishTrainingTaskFlow()
+        delegate?.didFinishTrainingTaskFlow(childCoordinator: self)
     }
     
     func didTapFinishTaskButton() {
