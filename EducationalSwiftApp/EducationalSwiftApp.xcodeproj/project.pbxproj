@@ -38,9 +38,11 @@
 		C93370242BF55899008DEE76 /* SectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93370232BF55899008DEE76 /* SectionData.swift */; };
 		C93370262BF55D01008DEE76 /* TrainingListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93370252BF55D01008DEE76 /* TrainingListDTO.swift */; };
 		C93370292BF55D7E008DEE76 /* TrainingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93370282BF55D7E008DEE76 /* TrainingTableViewCellViewModel.swift */; };
-		C933702B2BF55D8E008DEE76 /* TrainingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C933702A2BF55D8E008DEE76 /* TrainingTableViewCell.swift */; };
+		C933702B2BF55D8E008DEE76 /* TrainingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C933702A2BF55D8E008DEE76 /* TrainingListTableViewCell.swift */; };
 		C933702D2BF55DE4008DEE76 /* TrainingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C933702C2BF55DE4008DEE76 /* TrainingListViewModel.swift */; };
 		C933702F2BF55FE2008DEE76 /* TrainingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C933702E2BF55FE2008DEE76 /* TrainingList.swift */; };
+		C93370312BF63A58008DEE76 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93370302BF63A58008DEE76 /* UIStackView+Extension.swift */; };
+		C93370332BF63B7F008DEE76 /* EduExperienceLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93370322BF63B7F008DEE76 /* EduExperienceLabelView.swift */; };
 		C9DBD7F42BF259AD008094B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F32BF259AD008094B3 /* AppDelegate.swift */; };
 		C9DBD7F62BF259AD008094B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F52BF259AD008094B3 /* SceneDelegate.swift */; };
 		C9DBD7F82BF259AD008094B3 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F72BF259AD008094B3 /* OnboardingViewController.swift */; };
@@ -89,9 +91,11 @@
 		C93370232BF55899008DEE76 /* SectionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionData.swift; sourceTree = "<group>"; };
 		C93370252BF55D01008DEE76 /* TrainingListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingListDTO.swift; sourceTree = "<group>"; };
 		C93370282BF55D7E008DEE76 /* TrainingTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingTableViewCellViewModel.swift; sourceTree = "<group>"; };
-		C933702A2BF55D8E008DEE76 /* TrainingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingTableViewCell.swift; sourceTree = "<group>"; };
+		C933702A2BF55D8E008DEE76 /* TrainingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingListTableViewCell.swift; sourceTree = "<group>"; };
 		C933702C2BF55DE4008DEE76 /* TrainingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingListViewModel.swift; sourceTree = "<group>"; };
 		C933702E2BF55FE2008DEE76 /* TrainingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingList.swift; sourceTree = "<group>"; };
+		C93370302BF63A58008DEE76 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
+		C93370322BF63B7F008DEE76 /* EduExperienceLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduExperienceLabelView.swift; sourceTree = "<group>"; };
 		C9DBD7F02BF259AD008094B3 /* EducationalSwiftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EducationalSwiftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9DBD7F32BF259AD008094B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9DBD7F52BF259AD008094B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -308,7 +312,7 @@
 		C93370272BF55D6E008DEE76 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				C933702A2BF55D8E008DEE76 /* TrainingTableViewCell.swift */,
+				C933702A2BF55D8E008DEE76 /* TrainingListTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -415,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				C9336FCA2BF3BD21008DEE76 /* UIColor + Extension.swift */,
+				C93370302BF63A58008DEE76 /* UIStackView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -430,6 +435,7 @@
 			isa = PBXGroup;
 			children = (
 				C9336FC82BF3B86A008DEE76 /* EduOnboardingButton.swift */,
+				C93370322BF63B7F008DEE76 /* EduExperienceLabelView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -668,7 +674,8 @@
 			files = (
 				C93370212BF55781008DEE76 /* Reusable.swift in Sources */,
 				C933701B2BF4E0FA008DEE76 /* ParentCoordinator.swift in Sources */,
-				C933702B2BF55D8E008DEE76 /* TrainingTableViewCell.swift in Sources */,
+				C933702B2BF55D8E008DEE76 /* TrainingListTableViewCell.swift in Sources */,
+				C93370332BF63B7F008DEE76 /* EduExperienceLabelView.swift in Sources */,
 				C9336FC72BF3AC6B008DEE76 /* OnboardingPartViewController.swift in Sources */,
 				C9336FF12BF41FFE008DEE76 /* ProfileCoordinator.swift in Sources */,
 				C933701F2BF4E7DC008DEE76 /* TrainingTaskCoordinator.swift in Sources */,
@@ -687,6 +694,7 @@
 				C9336FFA2BF4B72B008DEE76 /* EditProfileViewController.swift in Sources */,
 				C9336FED2BF41CCD008DEE76 /* ProfileViewController.swift in Sources */,
 				C9336FE62BF4166C008DEE76 /* MainTabBarCoordinator.swift in Sources */,
+				C93370312BF63A58008DEE76 /* UIStackView+Extension.swift in Sources */,
 				C93370262BF55D01008DEE76 /* TrainingListDTO.swift in Sources */,
 				C9336FEB2BF41AC8008DEE76 /* ProfileViewNavigation.swift in Sources */,
 				C93370002BF4B922008DEE76 /* TopicsViewController.swift in Sources */,

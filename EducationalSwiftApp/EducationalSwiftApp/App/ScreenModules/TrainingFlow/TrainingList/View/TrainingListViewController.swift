@@ -36,7 +36,8 @@ final class TrainingListViewController: UIViewController {
     // MARK: Views
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.backgroundColor = UIColor(hexString: "#EDEDF4")
+        tableView.register(TrainingListTableViewCell.self, forCellReuseIdentifier: TrainingListTableViewCell.reuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
         return tableView
@@ -81,11 +82,10 @@ extension TrainingListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TrainingListTableViewCell.reuseIdentifier, for: indexPath) as? TrainingListTableViewCell else { return UITableViewCell() }
         let section = sections[indexPath.section]
         let sectionData = section.data[indexPath.row]
-        cell.textLabel?.text = sectionData.titleTraining
-        cell.imageView?.image = UIImage(systemName: sectionData.trainingImage ?? "")
+        cell.configure(trainingListViewModel: TrainingListTableViewCellViewModel(trainingList: TrainingList(imageURL: "", typeOfTraining: "Урок", titleTraining: "Основы Swift", experience: "XP +10")))
         return cell
     }
     
@@ -104,6 +104,10 @@ extension TrainingListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         coordinator?.didSelectTaskCell(id: indexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        180
     }
 }
 
