@@ -15,7 +15,7 @@ struct SectionData {
 extension SectionData {
     func mapper() -> [TrainingList] {
         let trainingListModel = data.map {
-            return TrainingList(image: $0.trainingImage,
+            return TrainingList(imageURL: $0.trainingImage,
                                 typeOfTraining: $0.typeOfTraining,
                                 titleTraining: $0.titleTraining,
                                 experience: $0.experience)

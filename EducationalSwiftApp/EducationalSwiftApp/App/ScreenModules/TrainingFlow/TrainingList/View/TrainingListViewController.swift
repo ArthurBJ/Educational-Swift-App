@@ -86,7 +86,6 @@ extension TrainingListViewController: UITableViewDataSource {
         let sectionData = section.data[indexPath.row]
         cell.textLabel?.text = sectionData.titleTraining
         cell.imageView?.image = UIImage(systemName: sectionData.trainingImage ?? "")
-        // newspaper, pencil.line
         return cell
     }
     
