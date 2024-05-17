@@ -29,7 +29,7 @@ final class EduProgressView: UIView {
     
     private let progressView: UIProgressView = {
         let progressView = UIProgressView()
-        progressView.progressTintColor = .green
+        progressView.progressTintColor = UIColor(hexString: "#41AF0D")
         progressView.trackTintColor = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 0.5)
         progressView.layer.masksToBounds = true
         progressView.layer.cornerRadius = 7.0

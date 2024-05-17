@@ -20,6 +20,7 @@ final class TrainingListCoordinator: Coordinator {
     
     func start() {
         let controller = factory.makeTrainingListViewController(coordinator: self)
+        navigation.rootViewController.setupNavBarColor()
         factory.makeItemTabBar(navigation: navigation)
         navigation.pushViewController(controller, animated: true)
     }

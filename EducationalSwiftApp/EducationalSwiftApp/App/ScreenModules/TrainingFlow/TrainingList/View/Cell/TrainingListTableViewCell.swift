@@ -61,7 +61,7 @@ final class TrainingListTableViewCell: UITableViewCell {
         button.setTitle("Учиться", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 15, weight: .bold)
         button.layer.cornerRadius = 5
-        button.backgroundColor = UIColor(hexString: "#149EF2")
+        button.backgroundColor = UIColor(hexString: "#1565C0").withAlphaComponent(194/255)
         button.setTitleColor(.white, for: .normal)
         return button
     }()
