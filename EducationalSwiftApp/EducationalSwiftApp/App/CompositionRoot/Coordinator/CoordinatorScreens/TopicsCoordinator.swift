@@ -19,6 +19,7 @@ final class TopicsCoordinator: Coordinator {
     
     func start() {
         let controller = factory.makeTopicsController()
+        navigation.rootViewController.setupNavBarColor()
         factory.makeItemTabBar(navigation: navigation)
         navigation.pushViewController(controller, animated: true)
     }

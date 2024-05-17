@@ -39,6 +39,7 @@ final class ProfileViewController: UIViewController {
     private func configView() {
         view.backgroundColor = .systemBackground
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(didTapSetting))
+        navigationItem.rightBarButtonItem?.tintColor = .white
     }
     
     @objc private func didTapSetting() {
