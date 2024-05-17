@@ -43,6 +43,9 @@
 		C933702F2BF55FE2008DEE76 /* TrainingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C933702E2BF55FE2008DEE76 /* TrainingList.swift */; };
 		C93370312BF63A58008DEE76 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93370302BF63A58008DEE76 /* UIStackView+Extension.swift */; };
 		C93370332BF63B7F008DEE76 /* EduExperienceLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93370322BF63B7F008DEE76 /* EduExperienceLabelView.swift */; };
+		C93370352BF6AE9E008DEE76 /* EduTrainingListSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93370342BF6AE9E008DEE76 /* EduTrainingListSectionHeader.swift */; };
+		C93370372BF75AF5008DEE76 /* EduProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93370362BF75AF5008DEE76 /* EduProgressView.swift */; };
+		C93370392BF75FA8008DEE76 /* EduToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93370382BF75FA8008DEE76 /* EduToolBarView.swift */; };
 		C9DBD7F42BF259AD008094B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F32BF259AD008094B3 /* AppDelegate.swift */; };
 		C9DBD7F62BF259AD008094B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F52BF259AD008094B3 /* SceneDelegate.swift */; };
 		C9DBD7F82BF259AD008094B3 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F72BF259AD008094B3 /* OnboardingViewController.swift */; };
@@ -96,6 +99,9 @@
 		C933702E2BF55FE2008DEE76 /* TrainingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingList.swift; sourceTree = "<group>"; };
 		C93370302BF63A58008DEE76 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		C93370322BF63B7F008DEE76 /* EduExperienceLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduExperienceLabelView.swift; sourceTree = "<group>"; };
+		C93370342BF6AE9E008DEE76 /* EduTrainingListSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduTrainingListSectionHeader.swift; sourceTree = "<group>"; };
+		C93370362BF75AF5008DEE76 /* EduProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduProgressView.swift; sourceTree = "<group>"; };
+		C93370382BF75FA8008DEE76 /* EduToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduToolBarView.swift; sourceTree = "<group>"; };
 		C9DBD7F02BF259AD008094B3 /* EducationalSwiftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EducationalSwiftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9DBD7F32BF259AD008094B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9DBD7F52BF259AD008094B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -436,6 +442,9 @@
 			children = (
 				C9336FC82BF3B86A008DEE76 /* EduOnboardingButton.swift */,
 				C93370322BF63B7F008DEE76 /* EduExperienceLabelView.swift */,
+				C93370342BF6AE9E008DEE76 /* EduTrainingListSectionHeader.swift */,
+				C93370362BF75AF5008DEE76 /* EduProgressView.swift */,
+				C93370382BF75FA8008DEE76 /* EduToolBarView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -675,6 +684,7 @@
 				C93370212BF55781008DEE76 /* Reusable.swift in Sources */,
 				C933701B2BF4E0FA008DEE76 /* ParentCoordinator.swift in Sources */,
 				C933702B2BF55D8E008DEE76 /* TrainingListTableViewCell.swift in Sources */,
+				C93370352BF6AE9E008DEE76 /* EduTrainingListSectionHeader.swift in Sources */,
 				C93370332BF63B7F008DEE76 /* EduExperienceLabelView.swift in Sources */,
 				C9336FC72BF3AC6B008DEE76 /* OnboardingPartViewController.swift in Sources */,
 				C9336FF12BF41FFE008DEE76 /* ProfileCoordinator.swift in Sources */,
@@ -682,6 +692,8 @@
 				C9DBD82B2BF27640008094B3 /* OnboardingFactory.swift in Sources */,
 				C93370192BF4D7FE008DEE76 /* Navigation.swift in Sources */,
 				C9336FE22BF415F2008DEE76 /* MainTabBarController.swift in Sources */,
+				C93370392BF75FA8008DEE76 /* EduToolBarView.swift in Sources */,
+				C93370372BF75AF5008DEE76 /* EduProgressView.swift in Sources */,
 				C93370082BF4BB2A008DEE76 /* TopicsCoordinator.swift in Sources */,
 				C9DBD8232BF274EF008094B3 /* AppCoordinator.swift in Sources */,
 				C9DBD7F82BF259AD008094B3 /* OnboardingViewController.swift in Sources */,

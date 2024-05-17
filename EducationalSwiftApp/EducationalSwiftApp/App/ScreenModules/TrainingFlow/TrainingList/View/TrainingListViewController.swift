@@ -34,13 +34,17 @@ final class TrainingListViewController: UIViewController {
     
     
     // MARK: Views
+    private lazy var toolBarView = EduToolBarView()
+    private lazy var progressView = EduProgressView()
+    
     private lazy var tableView: UITableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.backgroundColor = UIColor(hexString: "#EDEDF4")
         tableView.separatorStyle = .none
         tableView.register(TrainingListTableViewCell.self, forCellReuseIdentifier: TrainingListTableViewCell.reuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.sectionHeaderTopPadding = 10
         return tableView
     }()
     
@@ -65,14 +69,12 @@ final class TrainingListViewController: UIViewController {
     // MARK: Private methods
     private func configView() {
         view.backgroundColor = .systemBackground
-//        view.backgroundColor = UIColor(hexString: "#EDEDF4")
         
         setConstraints()
     }
     
-    @objc fileprivate func openSection(button: UIButton) {
+    @objc fileprivate func openSection(button: EduTrainingListSectionHeader) {
         let section = button.tag
-//        let isOpen = sections[section].isOpen
         var indexPaths = [IndexPath]()
         for row in sections[section].data.indices {
             let indexPathToDelete = IndexPath(row: row, section: section)
@@ -81,8 +83,7 @@ final class TrainingListViewController: UIViewController {
         
         let isOpen = sections[section].isOpen
         sections[section].isOpen = !isOpen
-        button.setTitle(isOpen ? "Open" : "Close", for: .normal)
-//        tableView.reloadData()
+        button.isSectionHidden = !isOpen
         if isOpen {
             tableView.deleteRows(at: indexPaths, with: .fade)
         } else {
@@ -114,10 +115,8 @@ extension TrainingListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let button = UIButton()
+        let button = EduTrainingListSectionHeader()
         button.tag = section
-        button.setTitle("Close", for: .normal)
-        button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(openSection), for: .touchUpInside)
         return button
     }
@@ -135,15 +134,35 @@ extension TrainingListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         180
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        50
+    }
 }
 
 
 // MARK: - Layout
 extension TrainingListViewController {
     private func setConstraints() {
+        view.addSubview(toolBarView)
+        toolBarView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.height.equalTo(45)
+        }
+        
+        view.addSubview(progressView)
+        progressView.snp.makeConstraints { make in
+            make.top.equalTo(toolBarView.snp_bottomMargin).offset(10)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.height.equalTo(45)
+        }
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalTo(progressView.snp_bottomMargin).offset(10)
+            make.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
 }
