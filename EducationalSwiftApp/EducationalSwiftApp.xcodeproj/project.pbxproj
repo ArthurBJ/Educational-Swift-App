@@ -47,6 +47,8 @@
 		C93370372BF75AF5008DEE76 /* EduProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93370362BF75AF5008DEE76 /* EduProgressView.swift */; };
 		C93370392BF75FA8008DEE76 /* EduToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93370382BF75FA8008DEE76 /* EduToolBarView.swift */; };
 		C933705B2BF7AC31008DEE76 /* UINavigationController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C933705A2BF7AC31008DEE76 /* UINavigationController + Extension.swift */; };
+		C93370812BF8BCA9008DEE76 /* LeftAlignedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93370802BF8BCA9008DEE76 /* LeftAlignedFlowLayout.swift */; };
+		C93370842BF8BD03008DEE76 /* TopicsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93370832BF8BD03008DEE76 /* TopicsCollectionViewCell.swift */; };
 		C9DBD7F42BF259AD008094B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F32BF259AD008094B3 /* AppDelegate.swift */; };
 		C9DBD7F62BF259AD008094B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F52BF259AD008094B3 /* SceneDelegate.swift */; };
 		C9DBD7F82BF259AD008094B3 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F72BF259AD008094B3 /* OnboardingViewController.swift */; };
@@ -104,6 +106,8 @@
 		C93370362BF75AF5008DEE76 /* EduProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduProgressView.swift; sourceTree = "<group>"; };
 		C93370382BF75FA8008DEE76 /* EduToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduToolBarView.swift; sourceTree = "<group>"; };
 		C933705A2BF7AC31008DEE76 /* UINavigationController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController + Extension.swift"; sourceTree = "<group>"; };
+		C93370802BF8BCA9008DEE76 /* LeftAlignedFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedFlowLayout.swift; sourceTree = "<group>"; };
+		C93370832BF8BD03008DEE76 /* TopicsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsCollectionViewCell.swift; sourceTree = "<group>"; };
 		C9DBD7F02BF259AD008094B3 /* EducationalSwiftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EducationalSwiftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9DBD7F32BF259AD008094B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9DBD7F52BF259AD008094B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -234,6 +238,7 @@
 		C9336FFD2BF4B913008DEE76 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C93370822BF8BCCA008DEE76 /* Cell */,
 				C9336FFF2BF4B922008DEE76 /* TopicsViewController.swift */,
 			);
 			path = View;
@@ -321,6 +326,14 @@
 			isa = PBXGroup;
 			children = (
 				C933702A2BF55D8E008DEE76 /* TrainingListTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C93370822BF8BCCA008DEE76 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C93370832BF8BD03008DEE76 /* TopicsCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -456,6 +469,7 @@
 			isa = PBXGroup;
 			children = (
 				C93370202BF55780008DEE76 /* Reusable.swift */,
+				C93370802BF8BCA9008DEE76 /* LeftAlignedFlowLayout.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -715,6 +729,7 @@
 				C9336FEB2BF41AC8008DEE76 /* ProfileViewNavigation.swift in Sources */,
 				C93370002BF4B922008DEE76 /* TopicsViewController.swift in Sources */,
 				C9336FEF2BF41F99008DEE76 /* ProfileFactory.swift in Sources */,
+				C93370812BF8BCA9008DEE76 /* LeftAlignedFlowLayout.swift in Sources */,
 				C933700E2BF4BF52008DEE76 /* TrainingListViewController.swift in Sources */,
 				C933701D2BF4E690008DEE76 /* TrainingTaskFactory.swift in Sources */,
 				C93370292BF55D7E008DEE76 /* TrainingTableViewCellViewModel.swift in Sources */,
@@ -723,6 +738,7 @@
 				C9336FDE2BF41573008DEE76 /* OnboardingViewModel.swift in Sources */,
 				C9336FE42BF41630008DEE76 /* MainTabBarFactory.swift in Sources */,
 				C933702D2BF55DE4008DEE76 /* TrainingListViewModel.swift in Sources */,
+				C93370842BF8BD03008DEE76 /* TopicsCollectionViewCell.swift in Sources */,
 				C93370152BF4C7EC008DEE76 /* TrainingTaskViewController.swift in Sources */,
 				C933702F2BF55FE2008DEE76 /* TrainingList.swift in Sources */,
 				C93370062BF4BA0C008DEE76 /* TopicsFactory.swift in Sources */,
