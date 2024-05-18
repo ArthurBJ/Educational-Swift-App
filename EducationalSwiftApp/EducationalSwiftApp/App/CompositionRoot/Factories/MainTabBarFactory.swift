@@ -16,7 +16,6 @@ struct MainTabBarFactoryImpl: MainTabBarFactory {
     
     func makeMainTabBar() -> UITabBarController {
         let mainTabBar = MainTabBarController()
-        mainTabBar.title = "Основы Swift"
         return mainTabBar
     }
     

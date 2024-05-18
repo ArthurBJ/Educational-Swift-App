@@ -20,7 +20,6 @@ final class ProfileCoordinator: Coordinator {
     func start() {
         let controller = factory.makeProfileController(coordinator: self)
         navigation.rootViewController.setupNavBarColor()
-        navigation.navigationBar.prefersLargeTitles = true
         navigation.pushViewController(controller, animated: true)
         factory.makeTabBarItem(navigation: navigation)
     }
