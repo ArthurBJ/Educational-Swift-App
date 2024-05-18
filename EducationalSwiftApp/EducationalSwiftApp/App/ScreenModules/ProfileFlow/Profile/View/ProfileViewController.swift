@@ -96,7 +96,25 @@ final class ProfileViewController: UIViewController {
     private lazy var strickView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
+        view.layer.cornerRadius = 5.0
         return view
+    }()
+    
+    private lazy var strickLabel: UILabel = {
+        let label = UILabel()
+        label.text = "СТРИК"
+        label.font = .systemFont(ofSize: 13, weight: .light)
+        label.textColor = .gray
+        return label
+    }()
+    
+    private lazy var strickCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.register(StrickCollectionViewCell.self, forCellWithReuseIdentifier: StrickCollectionViewCell.reuseIdentifier)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        return collectionView
     }()
     
     // MARK: - Initializers
@@ -134,6 +152,33 @@ final class ProfileViewController: UIViewController {
     
     @objc private func didTapSetting() {
         coordinator?.didSelectNavigationButton(profileViewNavigation: .changeTheme)
+    }
+}
+
+extension ProfileViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        7
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StrickCollectionViewCell.reuseIdentifier, for: indexPath) as? StrickCollectionViewCell else { return UICollectionViewCell() }
+        
+        return cell
+    }
+    
+}
+
+extension ProfileViewController: UICollectionViewDelegate {
+    
+}
+
+extension ProfileViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let itemsPerRow: CGFloat = 7
+        let paddingWidth = 10 * (itemsPerRow + 1)
+        let availableWidth = collectionView.frame.width - paddingWidth
+        let widthPerItem = availableWidth / itemsPerRow
+        return CGSize(width: widthPerItem, height: widthPerItem)
     }
 }
 
@@ -186,6 +231,27 @@ extension ProfileViewController {
             make.top.equalTo(infoContainerView.snp_bottomMargin)
             make.bottom.equalTo(view.snp.bottom)
             make.width.equalTo(scrollView)
+        }
+        
+        strickContainer.addSubview(strickView)
+        strickView.snp.makeConstraints { make in
+            make.top.equalTo(strickContainer.snp_topMargin).offset(20)
+            make.leading.equalTo(strickContainer).offset(10)
+            make.trailing.equalTo(strickContainer).offset(-10)
+            make.height.equalTo(view).multipliedBy(0.25)
+        }
+        
+        strickView.addSubview(strickLabel)
+        strickLabel.snp.makeConstraints { make in
+            make.leading.top.equalToSuperview().offset(12)
+        }
+        
+        strickView.addSubview(strickCollectionView)
+        strickCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(strickLabel.snp_bottomMargin).offset(35)
+            make.leading.equalToSuperview().offset(5)
+            make.trailing.equalToSuperview().offset(-5)
+            make.height.equalToSuperview().multipliedBy(0.25)
         }
     }
 }

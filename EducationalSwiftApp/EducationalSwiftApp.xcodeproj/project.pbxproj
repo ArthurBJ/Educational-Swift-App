@@ -49,6 +49,7 @@
 		C933705B2BF7AC31008DEE76 /* UINavigationController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C933705A2BF7AC31008DEE76 /* UINavigationController + Extension.swift */; };
 		C93370812BF8BCA9008DEE76 /* LeftAlignedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93370802BF8BCA9008DEE76 /* LeftAlignedFlowLayout.swift */; };
 		C93370842BF8BD03008DEE76 /* TopicsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93370832BF8BD03008DEE76 /* TopicsCollectionViewCell.swift */; };
+		C958CD442BF9500500761DEE /* StrickCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C958CD432BF9500500761DEE /* StrickCollectionViewCell.swift */; };
 		C9DBD7F42BF259AD008094B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F32BF259AD008094B3 /* AppDelegate.swift */; };
 		C9DBD7F62BF259AD008094B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F52BF259AD008094B3 /* SceneDelegate.swift */; };
 		C9DBD7F82BF259AD008094B3 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F72BF259AD008094B3 /* OnboardingViewController.swift */; };
@@ -108,6 +109,7 @@
 		C933705A2BF7AC31008DEE76 /* UINavigationController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController + Extension.swift"; sourceTree = "<group>"; };
 		C93370802BF8BCA9008DEE76 /* LeftAlignedFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedFlowLayout.swift; sourceTree = "<group>"; };
 		C93370832BF8BD03008DEE76 /* TopicsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsCollectionViewCell.swift; sourceTree = "<group>"; };
+		C958CD432BF9500500761DEE /* StrickCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrickCollectionViewCell.swift; sourceTree = "<group>"; };
 		C9DBD7F02BF259AD008094B3 /* EducationalSwiftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EducationalSwiftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9DBD7F32BF259AD008094B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9DBD7F52BF259AD008094B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 		C9336FE82BF41A75008DEE76 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C958CD422BF94FF800761DEE /* Cell */,
 				C9336FEC2BF41CCD008DEE76 /* ProfileViewController.swift */,
 			);
 			path = View;
@@ -334,6 +337,14 @@
 			isa = PBXGroup;
 			children = (
 				C93370832BF8BD03008DEE76 /* TopicsCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C958CD422BF94FF800761DEE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C958CD432BF9500500761DEE /* StrickCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -734,6 +745,7 @@
 				C933701D2BF4E690008DEE76 /* TrainingTaskFactory.swift in Sources */,
 				C93370292BF55D7E008DEE76 /* TrainingTableViewCellViewModel.swift in Sources */,
 				C93370172BF4CF26008DEE76 /* TrainingListCoordinator.swift in Sources */,
+				C958CD442BF9500500761DEE /* StrickCollectionViewCell.swift in Sources */,
 				C9DBD8292BF27613008094B3 /* OnboardingCoordinator.swift in Sources */,
 				C9336FDE2BF41573008DEE76 /* OnboardingViewModel.swift in Sources */,
 				C9336FE42BF41630008DEE76 /* MainTabBarFactory.swift in Sources */,
