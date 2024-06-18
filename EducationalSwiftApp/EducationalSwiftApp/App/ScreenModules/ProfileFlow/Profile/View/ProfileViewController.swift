@@ -19,6 +19,7 @@ final class ProfileViewController: UIViewController {
     private var contentSize: CGSize {
         return CGSize(width: view.frame.width, height: view.frame.height + 60)
     }
+    private var dayOfWeek: [String] = ["ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС"]
     
     
     // MARK: - Views
@@ -117,6 +118,45 @@ final class ProfileViewController: UIViewController {
         return collectionView
     }()
     
+    private lazy var borderLine: UIView = {
+        let view = UIView()
+//        view.backgroundColor = UIColor(hexString: "#EDEDF4")
+        view.backgroundColor = .gray.withAlphaComponent(0.3)
+        return view
+    }()
+    
+    private lazy var nowStrickLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Текущий"
+        label.font = .systemFont(ofSize: 11, weight: .light)
+        label.textColor = .gray
+        return label
+    }()
+    
+    private lazy var longestStrickLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Самый долгий"
+        label.font = .systemFont(ofSize: 11, weight: .light)
+        label.textColor = .gray
+        return label
+    }()
+    
+    private lazy var nowCountOfDay: UILabel = {
+        let label = UILabel()
+        label.text = "2 день "
+        label.font = .systemFont(ofSize: 16, weight: .bold)
+        label.textColor = .gray
+        return label
+    }()
+    
+    private lazy var longestCountOfDay: UILabel = {
+        let label = UILabel()
+        label.text = "2 дня"
+        label.font = .systemFont(ofSize: 16, weight: .bold)
+        label.textColor = .gray
+        return label
+    }()
+    
     // MARK: - Initializers
     init(coordinator: ProfileViewControllerCoordinator) {
         self.coordinator = coordinator
@@ -162,7 +202,7 @@ extension ProfileViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StrickCollectionViewCell.reuseIdentifier, for: indexPath) as? StrickCollectionViewCell else { return UICollectionViewCell() }
-        
+        cell.configure(day: dayOfWeek[indexPath.row])
         return cell
     }
     
@@ -252,6 +292,26 @@ extension ProfileViewController {
             make.leading.equalToSuperview().offset(5)
             make.trailing.equalToSuperview().offset(-5)
             make.height.equalToSuperview().multipliedBy(0.25)
+        }
+        
+        strickView.addSubview(borderLine)
+        borderLine.snp.makeConstraints { make in
+            make.top.equalTo(strickCollectionView.snp_bottomMargin).offset(20)
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(-10)
+            make.height.equalTo(1)
+        }
+        
+        let nowStackView = UIStackView(arrangedSubviews: [nowStrickLabel, nowCountOfDay], axis: .vertical, spacing: 10)
+        let longestStackView = UIStackView(arrangedSubviews: [longestStrickLabel, longestCountOfDay], axis: .vertical, spacing: 10)
+        let daysStackView = UIStackView(arrangedSubviews: [nowStackView, longestStackView], axis: .horizontal, spacing: 0)
+        
+        
+        strickView.addSubview(daysStackView)
+        daysStackView.snp.makeConstraints { make in
+            make.top.equalTo(borderLine).offset(20)
+            make.leading.equalToSuperview().offset(60)
+            make.trailing.equalToSuperview().offset(-60)
         }
     }
 }

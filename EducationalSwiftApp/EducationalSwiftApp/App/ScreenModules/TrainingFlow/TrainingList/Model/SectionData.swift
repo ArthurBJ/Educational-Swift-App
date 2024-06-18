@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct SectionData {
+struct SectionData: Decodable {
     var isOpen: Bool
-    var data: [TrainingListDTO]
+//    var data: [TrainingListDTO]
+    var data: [TrainingListTableViewCellViewModel]
 }
 
 extension SectionData {

@@ -50,6 +50,36 @@
 		C93370812BF8BCA9008DEE76 /* LeftAlignedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93370802BF8BCA9008DEE76 /* LeftAlignedFlowLayout.swift */; };
 		C93370842BF8BD03008DEE76 /* TopicsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93370832BF8BD03008DEE76 /* TopicsCollectionViewCell.swift */; };
 		C958CD442BF9500500761DEE /* StrickCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C958CD432BF9500500761DEE /* StrickCollectionViewCell.swift */; };
+		C97835A82C205A9E00F95260 /* TrainingTaskPracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835A72C205A9E00F95260 /* TrainingTaskPracticeViewController.swift */; };
+		C97835AA2C206A7000F95260 /* TrainingTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835A92C206A7000F95260 /* TrainingTaskViewModel.swift */; };
+		C97835AC2C20719E00F95260 /* UIPageViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835AB2C20719E00F95260 /* UIPageViewController + Extension.swift */; };
+		C97835AF2C20979B00F95260 /* Theory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835AE2C20979B00F95260 /* Theory.swift */; };
+		C97835B22C2098AC00F95260 /* TrainingTaskTheoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835B12C2098AC00F95260 /* TrainingTaskTheoryView.swift */; };
+		C97835B52C20A08700F95260 /* StateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835B42C20A08700F95260 /* StateController.swift */; };
+		C97835B72C20D48300F95260 /* TrainingDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835B62C20D48300F95260 /* TrainingDoneViewController.swift */; };
+		C97835BA2C20D8DC00F95260 /* TaskDoneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835B92C20D8DC00F95260 /* TaskDoneFactory.swift */; };
+		C97835BC2C20D97800F95260 /* TrainingDoneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835BB2C20D97800F95260 /* TrainingDoneCoordinator.swift */; };
+		C97835BE2C21B0D200F95260 /* Practice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835BD2C21B0D200F95260 /* Practice.swift */; };
+		C97835C02C21BE8600F95260 /* EduPracticeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835BF2C21BE8600F95260 /* EduPracticeButton.swift */; };
+		C97835CF2C222A9000F95260 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835C22C222A9000F95260 /* NetworkRouter.swift */; };
+		C97835D02C222A9000F95260 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835C32C222A9000F95260 /* HTTPTask.swift */; };
+		C97835D12C222A9000F95260 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835C42C222A9000F95260 /* HTTPMethod.swift */; };
+		C97835D22C222A9000F95260 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835C52C222A9000F95260 /* Router.swift */; };
+		C97835D32C222A9000F95260 /* EndpointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835C62C222A9000F95260 /* EndpointType.swift */; };
+		C97835D42C222A9000F95260 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835C82C222A9000F95260 /* NetworkManager.swift */; };
+		C97835D52C222A9000F95260 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835CA2C222A9000F95260 /* ParameterEncoding.swift */; };
+		C97835D62C222A9000F95260 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835CB2C222A9000F95260 /* URLParameterEncoder.swift */; };
+		C97835D72C222A9000F95260 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835CC2C222A9000F95260 /* JSONParameterEncoder.swift */; };
+		C97835D82C222A9000F95260 /* EduEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835CE2C222A9000F95260 /* EduEndpoint.swift */; };
+		C97835DA2C222E4700F95260 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835D92C222E4700F95260 /* Onboarding.swift */; };
+		C97835DC2C222FD600F95260 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835DB2C222FD600F95260 /* Topic.swift */; };
+		C97835DE2C2234D700F95260 /* TopicsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835DD2C2234D700F95260 /* TopicsViewModel.swift */; };
+		C97835E02C22366800F95260 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835DF2C22366800F95260 /* BaseViewModel.swift */; };
+		C97835E22C223CC300F95260 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835E12C223CC300F95260 /* CoreDataManager.swift */; };
+		C97835E52C223D2600F95260 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835E42C223D2600F95260 /* User+CoreDataClass.swift */; };
+		C97835E72C223D3A00F95260 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835E62C223D3A00F95260 /* User+CoreDataProperties.swift */; };
+		C97835E92C223E8E00F95260 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835E82C223E8E00F95260 /* EditProfileViewModel.swift */; };
+		C97835EB2C223FAE00F95260 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97835EA2C223FAE00F95260 /* EditProfileView.swift */; };
 		C9DBD7F42BF259AD008094B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F32BF259AD008094B3 /* AppDelegate.swift */; };
 		C9DBD7F62BF259AD008094B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F52BF259AD008094B3 /* SceneDelegate.swift */; };
 		C9DBD7F82BF259AD008094B3 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DBD7F72BF259AD008094B3 /* OnboardingViewController.swift */; };
@@ -110,6 +140,36 @@
 		C93370802BF8BCA9008DEE76 /* LeftAlignedFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedFlowLayout.swift; sourceTree = "<group>"; };
 		C93370832BF8BD03008DEE76 /* TopicsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsCollectionViewCell.swift; sourceTree = "<group>"; };
 		C958CD432BF9500500761DEE /* StrickCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrickCollectionViewCell.swift; sourceTree = "<group>"; };
+		C97835A72C205A9E00F95260 /* TrainingTaskPracticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingTaskPracticeViewController.swift; sourceTree = "<group>"; };
+		C97835A92C206A7000F95260 /* TrainingTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingTaskViewModel.swift; sourceTree = "<group>"; };
+		C97835AB2C20719E00F95260 /* UIPageViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPageViewController + Extension.swift"; sourceTree = "<group>"; };
+		C97835AE2C20979B00F95260 /* Theory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theory.swift; sourceTree = "<group>"; };
+		C97835B12C2098AC00F95260 /* TrainingTaskTheoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingTaskTheoryView.swift; sourceTree = "<group>"; };
+		C97835B42C20A08700F95260 /* StateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateController.swift; sourceTree = "<group>"; };
+		C97835B62C20D48300F95260 /* TrainingDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingDoneViewController.swift; sourceTree = "<group>"; };
+		C97835B92C20D8DC00F95260 /* TaskDoneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDoneFactory.swift; sourceTree = "<group>"; };
+		C97835BB2C20D97800F95260 /* TrainingDoneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingDoneCoordinator.swift; sourceTree = "<group>"; };
+		C97835BD2C21B0D200F95260 /* Practice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice.swift; sourceTree = "<group>"; };
+		C97835BF2C21BE8600F95260 /* EduPracticeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduPracticeButton.swift; sourceTree = "<group>"; };
+		C97835C22C222A9000F95260 /* NetworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		C97835C32C222A9000F95260 /* HTTPTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		C97835C42C222A9000F95260 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		C97835C52C222A9000F95260 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		C97835C62C222A9000F95260 /* EndpointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointType.swift; sourceTree = "<group>"; };
+		C97835C82C222A9000F95260 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C97835CA2C222A9000F95260 /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		C97835CB2C222A9000F95260 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		C97835CC2C222A9000F95260 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		C97835CE2C222A9000F95260 /* EduEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EduEndpoint.swift; sourceTree = "<group>"; };
+		C97835D92C222E4700F95260 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		C97835DB2C222FD600F95260 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		C97835DD2C2234D700F95260 /* TopicsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsViewModel.swift; sourceTree = "<group>"; };
+		C97835DF2C22366800F95260 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		C97835E12C223CC300F95260 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		C97835E42C223D2600F95260 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C97835E62C223D3A00F95260 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C97835E82C223E8E00F95260 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		C97835EA2C223FAE00F95260 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		C9DBD7F02BF259AD008094B3 /* EducationalSwiftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EducationalSwiftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9DBD7F32BF259AD008094B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9DBD7F52BF259AD008094B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -218,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				C9336FF92BF4B72B008DEE76 /* EditProfileViewController.swift */,
+				C97835EA2C223FAE00F95260 /* EditProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -225,6 +286,7 @@
 		C9336FF82BF4B718008DEE76 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C97835E82C223E8E00F95260 /* EditProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -234,6 +296,7 @@
 			children = (
 				C9336FFE2BF4B917008DEE76 /* ViewModel */,
 				C9336FFD2BF4B913008DEE76 /* View */,
+				C97835DB2C222FD600F95260 /* Topic.swift */,
 			);
 			path = Topics;
 			sourceTree = "<group>";
@@ -250,6 +313,7 @@
 		C9336FFE2BF4B917008DEE76 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C97835DD2C2234D700F95260 /* TopicsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -294,6 +358,7 @@
 		C933700F2BF4BF89008DEE76 /* TrainingTask */ = {
 			isa = PBXGroup;
 			children = (
+				C97835AD2C20978D00F95260 /* Model */,
 				C93370112BF4BFA3008DEE76 /* ViewModel */,
 				C93370102BF4BF9F008DEE76 /* View */,
 			);
@@ -304,6 +369,9 @@
 			isa = PBXGroup;
 			children = (
 				C93370142BF4C7EC008DEE76 /* TrainingTaskViewController.swift */,
+				C97835B12C2098AC00F95260 /* TrainingTaskTheoryView.swift */,
+				C97835A72C205A9E00F95260 /* TrainingTaskPracticeViewController.swift */,
+				C97835B62C20D48300F95260 /* TrainingDoneViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -311,6 +379,7 @@
 		C93370112BF4BFA3008DEE76 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C97835A92C206A7000F95260 /* TrainingTaskViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -347,6 +416,62 @@
 				C958CD432BF9500500761DEE /* StrickCollectionViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		C97835AD2C20978D00F95260 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C97835AE2C20979B00F95260 /* Theory.swift */,
+				C97835BD2C21B0D200F95260 /* Practice.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C97835C12C222A9000F95260 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C97835C22C222A9000F95260 /* NetworkRouter.swift */,
+				C97835C32C222A9000F95260 /* HTTPTask.swift */,
+				C97835C42C222A9000F95260 /* HTTPMethod.swift */,
+				C97835C52C222A9000F95260 /* Router.swift */,
+				C97835C62C222A9000F95260 /* EndpointType.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C97835C72C222A9000F95260 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C97835C82C222A9000F95260 /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		C97835C92C222A9000F95260 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				C97835CA2C222A9000F95260 /* ParameterEncoding.swift */,
+				C97835CB2C222A9000F95260 /* URLParameterEncoder.swift */,
+				C97835CC2C222A9000F95260 /* JSONParameterEncoder.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		C97835CD2C222A9000F95260 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				C97835CE2C222A9000F95260 /* EduEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		C97835E32C223D0D00F95260 /* CoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				C97835E42C223D2600F95260 /* User+CoreDataClass.swift */,
+				C97835E62C223D3A00F95260 /* User+CoreDataProperties.swift */,
+			);
+			path = CoreDataModel;
 			sourceTree = "<group>";
 		};
 		C9DBD7E72BF259AD008094B3 = {
@@ -414,6 +539,10 @@
 		C9DBD8112BF25A25008094B3 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				C97835C92C222A9000F95260 /* Encoding */,
+				C97835CD2C222A9000F95260 /* Endpoint */,
+				C97835C72C222A9000F95260 /* Manager */,
+				C97835C12C222A9000F95260 /* Service */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -429,8 +558,10 @@
 		C9DBD8132BF25A34008094B3 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				C97835E32C223D0D00F95260 /* CoreDataModel */,
 				C9DBD7FC2BF259AD008094B3 /* EducationalSwiftApp.xcdatamodeld */,
 				C9336FDA2BF413EA008DEE76 /* UserDefaultsManager.swift */,
+				C97835E12C223CC300F95260 /* CoreDataManager.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -453,6 +584,7 @@
 				C9336FCA2BF3BD21008DEE76 /* UIColor + Extension.swift */,
 				C93370302BF63A58008DEE76 /* UIStackView+Extension.swift */,
 				C933705A2BF7AC31008DEE76 /* UINavigationController + Extension.swift */,
+				C97835AB2C20719E00F95260 /* UIPageViewController + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -468,6 +600,7 @@
 			isa = PBXGroup;
 			children = (
 				C9336FC82BF3B86A008DEE76 /* EduOnboardingButton.swift */,
+				C97835BF2C21BE8600F95260 /* EduPracticeButton.swift */,
 				C93370322BF63B7F008DEE76 /* EduExperienceLabelView.swift */,
 				C93370342BF6AE9E008DEE76 /* EduTrainingListSectionHeader.swift */,
 				C93370362BF75AF5008DEE76 /* EduProgressView.swift */,
@@ -481,6 +614,8 @@
 			children = (
 				C93370202BF55780008DEE76 /* Reusable.swift */,
 				C93370802BF8BCA9008DEE76 /* LeftAlignedFlowLayout.swift */,
+				C97835B42C20A08700F95260 /* StateController.swift */,
+				C97835DF2C22366800F95260 /* BaseViewModel.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -513,6 +648,7 @@
 				C93370052BF4BA0C008DEE76 /* TopicsFactory.swift */,
 				C93370122BF4C7BB008DEE76 /* TrainingListFactory.swift */,
 				C933701C2BF4E690008DEE76 /* TrainingTaskFactory.swift */,
+				C97835B92C20D8DC00F95260 /* TaskDoneFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -566,6 +702,7 @@
 				C93370072BF4BB2A008DEE76 /* TopicsCoordinator.swift */,
 				C93370162BF4CF26008DEE76 /* TrainingListCoordinator.swift */,
 				C933701E2BF4E7DC008DEE76 /* TrainingTaskCoordinator.swift */,
+				C97835BB2C20D97800F95260 /* TrainingDoneCoordinator.swift */,
 			);
 			path = CoordinatorScreens;
 			sourceTree = "<group>";
@@ -582,6 +719,7 @@
 		C9DBD82E2BF277DB008094B3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C97835D92C222E4700F95260 /* Onboarding.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -709,6 +847,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97835D42C222A9000F95260 /* NetworkManager.swift in Sources */,
 				C93370212BF55781008DEE76 /* Reusable.swift in Sources */,
 				C933701B2BF4E0FA008DEE76 /* ParentCoordinator.swift in Sources */,
 				C933702B2BF55D8E008DEE76 /* TrainingListTableViewCell.swift in Sources */,
@@ -716,31 +855,52 @@
 				C93370332BF63B7F008DEE76 /* EduExperienceLabelView.swift in Sources */,
 				C9336FC72BF3AC6B008DEE76 /* OnboardingPartViewController.swift in Sources */,
 				C9336FF12BF41FFE008DEE76 /* ProfileCoordinator.swift in Sources */,
+				C97835B72C20D48300F95260 /* TrainingDoneViewController.swift in Sources */,
 				C933701F2BF4E7DC008DEE76 /* TrainingTaskCoordinator.swift in Sources */,
 				C9DBD82B2BF27640008094B3 /* OnboardingFactory.swift in Sources */,
+				C97835B22C2098AC00F95260 /* TrainingTaskTheoryView.swift in Sources */,
 				C93370192BF4D7FE008DEE76 /* Navigation.swift in Sources */,
 				C9336FE22BF415F2008DEE76 /* MainTabBarController.swift in Sources */,
 				C93370392BF75FA8008DEE76 /* EduToolBarView.swift in Sources */,
+				C97835D12C222A9000F95260 /* HTTPMethod.swift in Sources */,
 				C93370372BF75AF5008DEE76 /* EduProgressView.swift in Sources */,
+				C97835AF2C20979B00F95260 /* Theory.swift in Sources */,
+				C97835DA2C222E4700F95260 /* Onboarding.swift in Sources */,
 				C93370082BF4BB2A008DEE76 /* TopicsCoordinator.swift in Sources */,
 				C9DBD8232BF274EF008094B3 /* AppCoordinator.swift in Sources */,
 				C9DBD7F82BF259AD008094B3 /* OnboardingViewController.swift in Sources */,
 				C9336FC92BF3B86A008DEE76 /* EduOnboardingButton.swift in Sources */,
 				C93370132BF4C7BB008DEE76 /* TrainingListFactory.swift in Sources */,
+				C97835E92C223E8E00F95260 /* EditProfileViewModel.swift in Sources */,
 				C9DBD7F42BF259AD008094B3 /* AppDelegate.swift in Sources */,
 				C93370042BF4B9CC008DEE76 /* EditProfileCoordinator.swift in Sources */,
 				C933705B2BF7AC31008DEE76 /* UINavigationController + Extension.swift in Sources */,
 				C9DBD8212BF274C4008094B3 /* Coordinator.swift in Sources */,
+				C97835CF2C222A9000F95260 /* NetworkRouter.swift in Sources */,
+				C97835D22C222A9000F95260 /* Router.swift in Sources */,
+				C97835DE2C2234D700F95260 /* TopicsViewModel.swift in Sources */,
+				C97835D32C222A9000F95260 /* EndpointType.swift in Sources */,
+				C97835DC2C222FD600F95260 /* Topic.swift in Sources */,
 				C9DBD7FE2BF259AD008094B3 /* EducationalSwiftApp.xcdatamodeld in Sources */,
 				C9336FFA2BF4B72B008DEE76 /* EditProfileViewController.swift in Sources */,
+				C97835D72C222A9000F95260 /* JSONParameterEncoder.swift in Sources */,
 				C9336FED2BF41CCD008DEE76 /* ProfileViewController.swift in Sources */,
+				C97835A82C205A9E00F95260 /* TrainingTaskPracticeViewController.swift in Sources */,
+				C97835D62C222A9000F95260 /* URLParameterEncoder.swift in Sources */,
 				C9336FE62BF4166C008DEE76 /* MainTabBarCoordinator.swift in Sources */,
+				C97835D02C222A9000F95260 /* HTTPTask.swift in Sources */,
 				C93370312BF63A58008DEE76 /* UIStackView+Extension.swift in Sources */,
 				C93370262BF55D01008DEE76 /* TrainingListDTO.swift in Sources */,
 				C9336FEB2BF41AC8008DEE76 /* ProfileViewNavigation.swift in Sources */,
 				C93370002BF4B922008DEE76 /* TopicsViewController.swift in Sources */,
+				C97835E02C22366800F95260 /* BaseViewModel.swift in Sources */,
+				C97835AA2C206A7000F95260 /* TrainingTaskViewModel.swift in Sources */,
+				C97835E72C223D3A00F95260 /* User+CoreDataProperties.swift in Sources */,
 				C9336FEF2BF41F99008DEE76 /* ProfileFactory.swift in Sources */,
+				C97835D52C222A9000F95260 /* ParameterEncoding.swift in Sources */,
+				C97835D82C222A9000F95260 /* EduEndpoint.swift in Sources */,
 				C93370812BF8BCA9008DEE76 /* LeftAlignedFlowLayout.swift in Sources */,
+				C97835AC2C20719E00F95260 /* UIPageViewController + Extension.swift in Sources */,
 				C933700E2BF4BF52008DEE76 /* TrainingListViewController.swift in Sources */,
 				C933701D2BF4E690008DEE76 /* TrainingTaskFactory.swift in Sources */,
 				C93370292BF55D7E008DEE76 /* TrainingTableViewCellViewModel.swift in Sources */,
@@ -748,18 +908,26 @@
 				C958CD442BF9500500761DEE /* StrickCollectionViewCell.swift in Sources */,
 				C9DBD8292BF27613008094B3 /* OnboardingCoordinator.swift in Sources */,
 				C9336FDE2BF41573008DEE76 /* OnboardingViewModel.swift in Sources */,
+				C97835B52C20A08700F95260 /* StateController.swift in Sources */,
 				C9336FE42BF41630008DEE76 /* MainTabBarFactory.swift in Sources */,
 				C933702D2BF55DE4008DEE76 /* TrainingListViewModel.swift in Sources */,
+				C97835C02C21BE8600F95260 /* EduPracticeButton.swift in Sources */,
 				C93370842BF8BD03008DEE76 /* TopicsCollectionViewCell.swift in Sources */,
+				C97835EB2C223FAE00F95260 /* EditProfileView.swift in Sources */,
 				C93370152BF4C7EC008DEE76 /* TrainingTaskViewController.swift in Sources */,
 				C933702F2BF55FE2008DEE76 /* TrainingList.swift in Sources */,
 				C93370062BF4BA0C008DEE76 /* TopicsFactory.swift in Sources */,
 				C93370022BF4B9B4008DEE76 /* EditProfileFactory.swift in Sources */,
 				C9336FDB2BF413EA008DEE76 /* UserDefaultsManager.swift in Sources */,
 				C9336FCB2BF3BD21008DEE76 /* UIColor + Extension.swift in Sources */,
+				C97835BC2C20D97800F95260 /* TrainingDoneCoordinator.swift in Sources */,
 				C9336FF32BF42387008DEE76 /* ItemTabBarFactory.swift in Sources */,
+				C97835E22C223CC300F95260 /* CoreDataManager.swift in Sources */,
 				C9DBD8272BF27566008094B3 /* AppFactory.swift in Sources */,
+				C97835BA2C20D8DC00F95260 /* TaskDoneFactory.swift in Sources */,
 				C9DBD7F62BF259AD008094B3 /* SceneDelegate.swift in Sources */,
+				C97835E52C223D2600F95260 /* User+CoreDataClass.swift in Sources */,
+				C97835BE2C21B0D200F95260 /* Practice.swift in Sources */,
 				C93370242BF55899008DEE76 /* SectionData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

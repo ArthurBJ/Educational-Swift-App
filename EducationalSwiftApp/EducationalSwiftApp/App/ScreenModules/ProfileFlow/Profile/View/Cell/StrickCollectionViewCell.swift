@@ -44,6 +44,13 @@ final class StrickCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func configure(day: String) {
+        dayLabel.text = day
+        if day == "ПН" || day == "ВТ" {
+            roundedView.backgroundColor = .green
+        }
+    }
+    
 }
 
 

@@ -61,6 +61,10 @@ final class EduTrainingListSectionHeader: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func configure(theme: String) {
+        themeTitleLabel.text = theme
+    }
+    
     private func setConstraints() {
         self.addSubview(openClosedImage)
         openClosedImage.snp.makeConstraints { make in

@@ -8,6 +8,7 @@
 import Foundation
 
 struct TrainingList {
+    var id: Int
     var imageURL: String?
     var typeOfTraining: String
     var titleTraining: String

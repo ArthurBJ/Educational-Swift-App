@@ -51,5 +51,14 @@ extension TrainingListCoordinator: TrainingTaskCoordinatorDelegate {
 }
 
 
+// MARK: - TrainingDoneCoordinatorDelegate
+extension TrainingListCoordinator: TrainingDoneCoordinatorDelegate {
+    func didTapDoneButton() {
+        print("fjksdfhj")
+    }
+    
+}
+
+
 // MARK: - ParentCoordinator
 extension TrainingListCoordinator: ParentCoordinator { }

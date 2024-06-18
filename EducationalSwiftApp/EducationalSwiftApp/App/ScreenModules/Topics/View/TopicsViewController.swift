@@ -7,11 +7,24 @@
 
 import UIKit
 import SnapKit
+import Combine
 
 final class TopicsViewController: UIViewController {
     
     // MARK: Properties
-    var arr:[String] = ["English","Intermediate","English","English","arr","UICollectionViewFlowLayoutFlowFlowFlow","English","UICollectionViewDelegate","English","Intermediate","UIViewController","viewDidLoad","Intermediate","String","Intermediate","arr","Intermediate","UIKit","Intermediate","English","columnLayout","English fsdfhksjd","languageLabel", "English","Intermediate","English","English","arr","UICollectionViewFlowLayoutFlowFlowFlow","English","UICollectionViewDelegate","English","Intermediate","UIViewController","viewDidLoad","Intermediate","String","Intermediate","arr","Intermediate","UIKit","Intermediate","English","columnLayout","English fsdfhksjd","languageLabel"]
+    private let viewModel: TopicsViewModel
+    private var cancellable = Set<AnyCancellable>()
+    
+    
+    // MARK: - Initializers
+    init(viewModel: TopicsViewModel, cancellable: Set<AnyCancellable> = Set<AnyCancellable>()) {
+        self.viewModel = viewModel
+        self.cancellable = cancellable
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
     // MARK: Views
@@ -35,6 +48,21 @@ final class TopicsViewController: UIViewController {
         configView()
     }
     
+    private func stateController() {
+        viewModel
+            .state
+            .sink { [weak self] state in
+            switch state {
+            case .success:
+                self?.collectionView.reloadData()
+            case .loading:
+                self?.showSpinner()
+            case .fail(error: let error):
+                self?.presentAlert(message: error, title: error)
+            }
+        }.store(in: &cancellable)
+    }
+    
     // MARK: Private methods
     private func configView() {
         view.backgroundColor = .systemBackground
@@ -47,12 +75,12 @@ final class TopicsViewController: UIViewController {
 // MARK: - UICollectionViewDataSource
 extension TopicsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arr.count
+        return viewModel.menuItemsCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopicsCollectionViewCell.reuseIdentifier, for: indexPath) as? TopicsCollectionViewCell else { return UICollectionViewCell() }
-        cell.topicLabel.text = arr[indexPath.row]
+        cell.topicLabel.text = viewModel.getTopicItem(indexPath: indexPath).title
         return cell
     }
     
@@ -63,7 +91,7 @@ extension TopicsViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension TopicsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let string = arr[indexPath.row]
+        let string = viewModel.getTopicItem(indexPath: indexPath).title
         
         let font = UIFont.systemFont(ofSize: 16)
         let fontAttribute = [NSAttributedString.Key.font: font]

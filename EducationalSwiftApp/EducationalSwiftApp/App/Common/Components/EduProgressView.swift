@@ -10,7 +10,7 @@ import SnapKit
 
 final class EduProgressView: UIView {
     
-    var progress: Float = 0.1 {
+    var progress: Float = 0 {
         didSet {
             progressView.setProgress(progress, animated: true)
         }

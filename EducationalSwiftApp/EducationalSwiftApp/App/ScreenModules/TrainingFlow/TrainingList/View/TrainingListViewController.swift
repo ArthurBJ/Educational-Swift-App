@@ -15,23 +15,9 @@ protocol TrainingListViewControllerCoordinator: AnyObject {
 final class TrainingListViewController: UIViewController {
     
     // MARK: Properties
+    private let viewModel: TrainingListViewModel
+    private var cancellable = Set<AnyCancellable>()
     private weak var coordinator: TrainingListViewControllerCoordinator?
-    fileprivate var sections: [SectionData] = [
-        SectionData(isOpen: true,
-                    data: [
-                        TrainingListDTO(trainingImage: "pencil.line", typeOfTraining: "Теория", titleTraining: "Swift", experience: "+ 10xp"),
-                        TrainingListDTO(trainingImage: "pencil.line", typeOfTraining: "Теория", titleTraining: "Swift", experience: "+ 10xp"),
-                        TrainingListDTO(trainingImage: "pencil.line", typeOfTraining: "Теория", titleTraining: "Swift", experience: "+ 10xp")
-                    ]),
-        SectionData(isOpen: false, data: [
-            TrainingListDTO(trainingImage: "newspaper", typeOfTraining: "Теория", titleTraining: "Swift", experience: "+ 10xp"),
-            TrainingListDTO(trainingImage: "newspaper", typeOfTraining: "Теория", titleTraining: "Swift", experience: "+ 10xp")
-        ]),
-        SectionData(isOpen: true, data: [
-            TrainingListDTO(trainingImage: "pencil.line", typeOfTraining: "Теория", titleTraining: "Swift", experience: "+ 10xp")
-        ])
-    ]
-    
     
     // MARK: Views
     private lazy var toolBarView = EduToolBarView()
@@ -50,7 +36,8 @@ final class TrainingListViewController: UIViewController {
     
     
     // MARK: Initializers
-    init(coordinator: TrainingListViewControllerCoordinator) {
+    init(viewModel: TrainingListViewModel, coordinator: TrainingListViewControllerCoordinator) {
+        self.viewModel = viewModel
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
@@ -73,6 +60,22 @@ final class TrainingListViewController: UIViewController {
         setConstraints()
     }
     
+    private func stateController() {
+        viewModel
+            .state
+            .receive(on: RunLoop.main)
+            .sink { [weak self] state in
+                switch state {
+                case .success:
+                    self?.tableView.reloadData()
+                case .loading:
+                    break
+                case .fail(error: let error):
+                    self?.presentAlert(message: error, title: error)
+                }
+            }.store(in: &cancellable)
+    }
+    
     @objc fileprivate func openSection(button: EduTrainingListSectionHeader) {
         let section = button.tag
         var indexPaths = [IndexPath]()
@@ -80,6 +83,8 @@ final class TrainingListViewController: UIViewController {
             let indexPathToDelete = IndexPath(row: row, section: section)
             indexPaths.append(indexPathToDelete)
         }
+        
+        button.configure(theme: themeSections[section])
         
         let isOpen = sections[section].isOpen
         sections[section].isOpen = !isOpen
@@ -96,7 +101,7 @@ final class TrainingListViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension TrainingListViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        return viewModel.trainingListCount
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -110,7 +115,8 @@ extension TrainingListViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TrainingListTableViewCell.reuseIdentifier, for: indexPath) as? TrainingListTableViewCell else { return UITableViewCell() }
         let section = sections[indexPath.section]
         let sectionData = section.data[indexPath.row]
-        cell.configure(trainingListViewModel: TrainingListTableViewCellViewModel(trainingList: TrainingList(imageURL: "", typeOfTraining: "Урок", titleTraining: "Основы Swift", experience: "XP +10")))
+//        cell.configure(trainingListViewModel: TrainingListTableViewCellViewModel(trainingList: TrainingList(imageURL: "", typeOfTraining: "Урок", titleTraining: "Основы Swift", experience: "XP +10")))
+        cell.configure(trainingListViewModel: sectionData)
         return cell
     }
     
